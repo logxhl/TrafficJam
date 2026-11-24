@@ -15,7 +15,7 @@ public class UIController : MonoBehaviour
     public AnimationSequencerController animationSequencerController_Notification;
     public GameObject obj_NotificationPanel;
     public TextMeshProUGUI txt_Notification;
-    
+
     // Text display
     public TextMeshProUGUI text_GuestCount;
     public TextMeshProUGUI text_CoinCount;
@@ -27,7 +27,7 @@ public class UIController : MonoBehaviour
     public TextMeshProUGUI text_VipSlotCount;
     public TextMeshProUGUI text_VipSlotCountInPanel;
     public TextMeshProUGUI text_TotalEarnings;
-    
+
     //In GamePlay Panel
     public GameObject obj_SettingsPanel;
     public GameObject obj_ReplayPanel;
@@ -43,45 +43,45 @@ public class UIController : MonoBehaviour
     public GameObject obj_UsingVipSlotPanel;
     public GameObject obj_SlotExtraPanel;
     public RectTransform trans_GameplayUIBottomRoot; // Gán UI gốc (chứa các nút Shuffle, Slot, ...)
-    
+
     // Gameplay
     public GameObject obj_SpecialCoins;
-    
+
     [Header("---- Runtime ----")]
     bool isReviveShown = false;
 
     public void HandleAwake()
     {
-        GameManager.Instance.maxAdsManager.trans_GameplayUIBottomRoot = trans_GameplayUIBottomRoot;
+        // GameManager.Instance.maxAdsManager.trans_GameplayUIBottomRoot = trans_GameplayUIBottomRoot;
     }
-    
+
     public void HandleStart()
     {
-        if(GameManager.Instance.maxAdsManager._isBannerVisible) GameManager.Instance.maxAdsManager.MoveUpUI();
+        // if(GameManager.Instance.maxAdsManager._isBannerVisible) GameManager.Instance.maxAdsManager.MoveUpUI();
         UpdateCoinCountDisplay(GameManager.Instance.dataManager.Coin);
         UpdateLevelTextDisplay(GameManager.Instance.dataManager.Level);
         UpdateAbilityCountsDisplay();
     }
-    
+
     public void UpdateAbilityCountsDisplay()
     {
         text_ShuffleCount.text = GameManager.Instance.dataManager.ShuffleCount.ToString("N0");
         text_SortCount.text = GameManager.Instance.dataManager.SortCount.ToString("N0");
         text_VipSlotCount.text = GameManager.Instance.dataManager.VipSlotCount.ToString("N0");
-        
-        if(GameManager.Instance.dataManager.ShuffleCount <= 0)
+
+        if (GameManager.Instance.dataManager.ShuffleCount <= 0)
             obj_QuantityShuffle.SetActive(false);
         else
         {
             obj_QuantityShuffle.SetActive(true);
         }
-        if(GameManager.Instance.dataManager.SortCount <= 0)
+        if (GameManager.Instance.dataManager.SortCount <= 0)
             obj_QuantitySort.SetActive(false);
         else
         {
             obj_QuantitySort.SetActive(true);
         }
-        if(GameManager.Instance.dataManager.VipSlotCount <= 0)
+        if (GameManager.Instance.dataManager.VipSlotCount <= 0)
             obj_QuantityVipSlot.SetActive(false);
         else
         {
@@ -96,7 +96,7 @@ public class UIController : MonoBehaviour
     {
         text_LevelIndex.text = "Level " + (count + 1);
     }
-    
+
     // win/lose/revive panels
     public void ShowWinPanel()
     {
@@ -117,7 +117,7 @@ public class UIController : MonoBehaviour
         obj_RevivePanel.SetActive(false);
         obj_LosePanel.SetActive(true);
     }
-    
+
     //In GamePlay Panel
     public void ShowSettingsPanel()
     {
@@ -137,9 +137,9 @@ public class UIController : MonoBehaviour
 
     public void ShowShufflePanel()
     {
-        if(!GameController.Instance.isGameStarted || GameController.Instance.isUseVipSlot || GameController.Instance.int_SortingNumberCarInParking > 0) return;
+        if (!GameController.Instance.isGameStarted || GameController.Instance.isUseVipSlot || GameController.Instance.int_SortingNumberCarInParking > 0) return;
         Time.timeScale = 0f;
-        if(GameManager.Instance.dataManager.ShuffleCount > 0)
+        if (GameManager.Instance.dataManager.ShuffleCount > 0)
         {
             text_ShuffleCountInPanel.text = GameManager.Instance.dataManager.ShuffleCount.ToString("N0");
             obj_ShufflePanel.SetActive(true);
@@ -155,9 +155,9 @@ public class UIController : MonoBehaviour
     }
     public void ShowSortPanel()
     {
-        if(!GameController.Instance.isGameStarted || GameController.Instance.isUseVipSlot || GameController.Instance.int_SortingNumberCarInParking > 0) return;
+        if (!GameController.Instance.isGameStarted || GameController.Instance.isUseVipSlot || GameController.Instance.int_SortingNumberCarInParking > 0) return;
         Time.timeScale = 0f;
-        if(GameManager.Instance.dataManager.SortCount > 0)
+        if (GameManager.Instance.dataManager.SortCount > 0)
         {
             text_SortCountInPanel.text = GameManager.Instance.dataManager.SortCount.ToString("N0");
             obj_SortPanel.SetActive(true);
@@ -173,7 +173,7 @@ public class UIController : MonoBehaviour
     }
     public void ShowVipSlotPanel()
     {
-        if(!GameController.Instance.isGameStarted || GameController.Instance.isUseVipSlot || GameController.Instance.int_SortingNumberCarInParking > 0) return;
+        if (!GameController.Instance.isGameStarted || GameController.Instance.isUseVipSlot || GameController.Instance.int_SortingNumberCarInParking > 0) return;
         Time.timeScale = 0f;
         if (GameManager.Instance.dataManager.VipSlotCount > 0)
         {
@@ -213,7 +213,7 @@ public class UIController : MonoBehaviour
         Time.timeScale = 1f;
         obj_SlotExtraPanel.SetActive(false);
     }
-    
+
     public void ShowWarningNotification()
     {
         txt_Notification.text = "only one spot left";

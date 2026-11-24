@@ -9,13 +9,13 @@ public class SplashSceneController : MonoBehaviour
     [Header("-----------Config-----------")]
     public float float_MinShowTime = 5f;      // bảo đảm quay “một lúc”
     public string str_DefaultFirstScene = "Tutorial"; // scene mặc định khi mở game lần đầu
-    
+
     [Header("-----------UI-----------")]
     public Slider slider_Loading;                           // kéo vào Inspector
     public float barFillSpeed = 3.5f;                      // tốc độ mượt của thanh
 
     float _bar; // giá trị nội bộ 0..1
-    
+
     void Awake()
     {
         if (slider_Loading) slider_Loading.value = 0f;
@@ -66,37 +66,37 @@ public class SplashSceneController : MonoBehaviour
         // Lần khởi động đầu, nếu cần thì thử show (nếu đã có sẵn cache từ phiên trước)
         //if (MaxAdsManager.Instance.enableAppOpen && MaxAdsManager.Instance.showAppOpenOnLaunch) MaxAdsManager.Instance.ShowAppOpenIfReady();
         // Thử show AOA ở Splash nhưng chỉ đợi tối đa X giây
-        if (AdMobAppOpenManager.Instance != null && AdMobAppOpenManager.Instance.showOnLaunch && !DataManager.Ins.IsFirstLaunch)
-        {
-            const float WAIT_READY_TIMEOUT = 2.0f; // tuỳ bạn 1.0–2.5s
-            float t = 0f;
+        // if (AdMobAppOpenManager.Instance != null && AdMobAppOpenManager.Instance.showOnLaunch && !DataManager.Ins.IsFirstLaunch)
+        // {
+        const float WAIT_READY_TIMEOUT = 2.0f; // tuỳ bạn 1.0–2.5s
+        float t = 0f;
 
-            // Vòng đợi ad trở nên sẵn sàng (không block vô hạn)
-            while (t < WAIT_READY_TIMEOUT)
-            {
-                // Nếu show được thì chờ đóng rồi thoát vòng
-                if (AdMobAppOpenManager.Instance.IsAdAvailable())
-                {
-                    AdMobAppOpenManager.Instance.TryShowAd();
-                    Debug.Log("[SplashScene] Show AOA ở Splash");
-                    // Chờ đến khi quảng cáo đóng
-                    while (AdMobAppOpenManager.Instance._isShowingAd) // <-- dùng property public (xem B)
-                        yield return null;
-                    break;
-                }
+        // Vòng đợi ad trở nên sẵn sàng (không block vô hạn)
+        // while (t < WAIT_READY_TIMEOUT)
+        // {
+        //     // Nếu show được thì chờ đóng rồi thoát vòng
+        //     // if (AdMobAppOpenManager.Instance.IsAdAvailable())
+        //     // {
+        //         // AdMobAppOpenManager.Instance.TryShowAd();
+        //         Debug.Log("[SplashScene] Show AOA ở Splash");
+        //         // Chờ đến khi quảng cáo đóng
+        //         while (AdMobAppOpenManager.Instance._isShowingAd) // <-- dùng property public (xem B)
+        //             yield return null;
+        //         break;
+        //     }
 
-                UpdateBar(0.98f);
-                t += Time.unscaledDeltaTime; // dùng unscaled để không phụ thuộc Time.timeScale
-                yield return null;
-            }
-        }
+        //     UpdateBar(0.98f);
+        //     t += Time.unscaledDeltaTime; // dùng unscaled để không phụ thuộc Time.timeScale
+        //     yield return null;
+        // }
+        // }
 
-        
+
         // Xong xuôi mới cho phép qua scene
         op.allowSceneActivation = true;
         yield return SmoothTo(1.0f, 0.25f); // hiệu ứng hoàn tất nhẹ
     }
-    
+
     // Cập nhật thanh theo target mượt mà mỗi frame
     void UpdateBar(float target01)
     {

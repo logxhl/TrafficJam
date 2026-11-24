@@ -15,7 +15,7 @@ public class GameController : MonoBehaviour
     public GuestManager guestManager;
     public PoolManager poolManager;
     public RuntimeLevelBuilder runtimeLevelBuilder;
-    [Header("---- Game Control ----")] 
+    [Header("---- Game Control ----")]
     public bool isGameStarted = false;
     public int int_SortingNumberCarInParking = 0;
     public bool isUseVipSlot = false;
@@ -23,7 +23,7 @@ public class GameController : MonoBehaviour
     public bool isWin = false;
     [Header("---- Runtime ----")]
     public int int_TotalCoinsEarnedThisLevel = 0;
-    
+
     private void Awake()
     {
         if (Instance != null && Instance != this) { Destroy(gameObject); return; }
@@ -36,9 +36,9 @@ public class GameController : MonoBehaviour
     private IEnumerator Start()
     {
         uiController.HandleStart();
-        
+
         yield return StartCoroutine(runtimeLevelBuilder.HandleStart());
-        
+
         // Bước 1: chạy ParkingLotManager
         yield return StartCoroutine(parkingLotManager.HandleStart());
 
@@ -53,7 +53,7 @@ public class GameController : MonoBehaviour
     {
         // TODO: logic thắng màn của bạn
         isWin = true;
-        GameManager.Instance.maxAdsManager.ShowInterstitial();
+        // GameManager.Instance.maxAdsManager.ShowInterstitial();
         uiController.ShowWinPanel();
     }
 
@@ -94,7 +94,7 @@ public class GameController : MonoBehaviour
         SceneManager.LoadScene(
             SceneManager.GetActiveScene().buildIndex);
     }
-    
+
     public void NextLevel()
     {
         Time.timeScale = 1f;
@@ -102,13 +102,13 @@ public class GameController : MonoBehaviour
         SceneManager.LoadScene(
             SceneManager.GetActiveScene().buildIndex);
     }
-    
+
     public void HackCoins()
     {
         GameManager.Instance.dataManager.AddCoin(10000);
         uiController.UpdateCoinCountDisplay(GameManager.Instance.dataManager.Coin);
     }
-    
+
     public void HackAbilities()
     {
         GameManager.Instance.dataManager.AddShuffle(1);
@@ -116,7 +116,7 @@ public class GameController : MonoBehaviour
         GameManager.Instance.dataManager.AddVipSlot(1);
         uiController.UpdateAbilityCountsDisplay();
     }
-    
+
     // Abilities
     // ----------- Shuffle -----------
     public void OnUseShuffle()
@@ -129,7 +129,7 @@ public class GameController : MonoBehaviour
             uiController.HideShufflePanel();
             uiController.UpdateCoinCountDisplay(GameManager.Instance.dataManager.Coin);
             GameManager.Instance.dataManager.MinusShuffle();
-            if(GameManager.Instance.dataManager.ShuffleCount > 0)
+            if (GameManager.Instance.dataManager.ShuffleCount > 0)
                 uiController.text_ShuffleCount.text = GameManager.Instance.dataManager.ShuffleCount.ToString("N0");
             else
             {
@@ -146,7 +146,7 @@ public class GameController : MonoBehaviour
     }
     public void OnUseCoinShuffleButtonClicked()
     {
-        if(GameManager.Instance.dataManager.TryMinusCoin(Params.INT_SHUFFLEPRICE))
+        if (GameManager.Instance.dataManager.TryMinusCoin(Params.INT_SHUFFLEPRICE))
         {
             uiController.UpdateCoinCountDisplay(GameManager.Instance.dataManager.Coin);
             OnUseShuffle();
@@ -159,14 +159,14 @@ public class GameController : MonoBehaviour
     }
     public void OnWatchAdsShuffleButtonClicked()
     {
-        GameManager.Instance.maxAdsManager.OnUserEarnedReward += () =>
-        {
-            OnUseShuffle();
-        };
-        
-        GameManager.Instance.maxAdsManager.ShowRewarded();
+        // GameManager.Instance.maxAdsManager.OnUserEarnedReward += () =>
+        // {
+        OnUseShuffle();
+        // };
+
+        // GameManager.Instance.maxAdsManager.ShowRewarded();
     }
-    
+
     // ----------- Sort -----------
     public void OnUseSort()
     {
@@ -175,7 +175,7 @@ public class GameController : MonoBehaviour
         guestManager.SortEnsureBlocksWaitingUnblockedFull();
         uiController.HideSortPanel();
         GameManager.Instance.dataManager.MinusSort();
-        if(GameManager.Instance.dataManager.SortCount > 0)
+        if (GameManager.Instance.dataManager.SortCount > 0)
             uiController.text_SortCount.text = GameManager.Instance.dataManager.SortCount.ToString("N0");
         else
         {
@@ -184,7 +184,8 @@ public class GameController : MonoBehaviour
     }
     public void SortUseCoin()
     {
-        if(GameManager.Instance.dataManager.TryMinusCoin(Params.INT_SORTPRICE)){
+        if (GameManager.Instance.dataManager.TryMinusCoin(Params.INT_SORTPRICE))
+        {
             uiController.UpdateCoinCountDisplay(GameManager.Instance.dataManager.Coin);
             OnUseSort();
         }
@@ -194,18 +195,18 @@ public class GameController : MonoBehaviour
             // (tuỳ chọn) hiển thị cảnh báo hoặc hiệu ứng rung nút
         }
     }
-    
+
     public void SortWatchAds()
     {
-        GameManager.Instance.maxAdsManager.OnUserEarnedReward += () =>
-        {
-            OnUseSort();
-            GameManager.Instance.maxAdsManager.ResetOnUserEarnedReward();
-        };
-        
-        GameManager.Instance.maxAdsManager.ShowRewarded();
+        // GameManager.Instance.maxAdsManager.OnUserEarnedReward += () =>
+        // {
+        OnUseSort();
+        // GameManager.Instance.maxAdsManager.ResetOnUserEarnedReward();
+        // };
+
+        // GameManager.Instance.maxAdsManager.ShowRewarded();
     }
-    
+
     // ----------- Vip Slot -----------
     public void OnUseVipSlot()
     {
@@ -220,7 +221,7 @@ public class GameController : MonoBehaviour
             car.spriteRenderer_CarBody.sortingOrder = 9001;
         }
         GameManager.Instance.dataManager.MinusVipSlot();
-        if(GameManager.Instance.dataManager.VipSlotCount > 0)
+        if (GameManager.Instance.dataManager.VipSlotCount > 0)
             uiController.text_VipSlotCount.text = GameManager.Instance.dataManager.VipSlotCount.ToString("N0");
         else
         {
@@ -229,7 +230,7 @@ public class GameController : MonoBehaviour
     }
     public void VipSlotUseCoin()
     {
-        if(GameManager.Instance.dataManager.TryMinusCoin(Params.INT_VIPSLOTPRICE))
+        if (GameManager.Instance.dataManager.TryMinusCoin(Params.INT_VIPSLOTPRICE))
         {
             uiController.UpdateCoinCountDisplay(GameManager.Instance.dataManager.Coin);
             OnUseVipSlot();
@@ -240,22 +241,22 @@ public class GameController : MonoBehaviour
             // (tuỳ chọn) hiển thị cảnh báo hoặc hiệu ứng rung nút
         }
     }
-    
+
     public void VipSlotWatchAds()
     {
-        GameManager.Instance.maxAdsManager.OnUserEarnedReward += () =>
-        {
-            OnUseVipSlot();
-            GameManager.Instance.maxAdsManager.ResetOnUserEarnedReward();
-        };
-        
-        GameManager.Instance.maxAdsManager.ShowRewarded();
+        // GameManager.Instance.maxAdsManager.OnUserEarnedReward += () =>
+        // {
+        OnUseVipSlot();
+        //     GameManager.Instance.maxAdsManager.ResetOnUserEarnedReward();
+        // };
+
+        // GameManager.Instance.maxAdsManager.ShowRewarded();
     }
-    
+
     //----------- Extra Slot -----------
     public void UseCoinGetMoreParkingSpace()
     {
-        if(DataManager.Ins.TryMinusCoin(Params.INT_EXTRASLOTPRICE))
+        if (DataManager.Ins.TryMinusCoin(Params.INT_EXTRASLOTPRICE))
         {
             foreach (var pk in parkingLotManager.listParkingSpaces_All)
             {
@@ -281,30 +282,30 @@ public class GameController : MonoBehaviour
             // (tuỳ chọn) hiển thị cảnh báo hoặc hiệu ứng rung nút
         }
     }
-    
+
     public void WatchAdsGetMoreParkingSpace()
     {
-        GameManager.Instance.maxAdsManager.OnUserEarnedReward += () =>
+        // GameManager.Instance.maxAdsManager.OnUserEarnedReward += () =>
+        // {
+        foreach (var pk in parkingLotManager.listParkingSpaces_All)
         {
-            foreach (var pk in parkingLotManager.listParkingSpaces_All)
+            if (!parkingLotManager.listParkingSpaces_current.Contains(pk) && !pk.isVipSlot)
             {
-                if (!parkingLotManager.listParkingSpaces_current.Contains(pk) && !pk.isVipSlot)
-                {
-                    guestManager.arrInt_wrongGuestColor = new int[guestManager.arrInt_wrongGuestColor.Length + 1];
-                    uiController.HideSlotExtraPanel();
-                    uiController.HideRevivePanel();
-                    isLose = false;
-                    pk.obj_Locked.SetActive(false);
-                    pk.obj_Unlocked.SetActive(true);
-                    pk.isOccupied = false;
-                    pk.isLocked = false;
-                    parkingLotManager.listParkingSpaces_current.Add(pk);
-                    GameManager.Instance.maxAdsManager.ResetOnUserEarnedReward();
-                    break;
-                }
+                guestManager.arrInt_wrongGuestColor = new int[guestManager.arrInt_wrongGuestColor.Length + 1];
+                uiController.HideSlotExtraPanel();
+                uiController.HideRevivePanel();
+                isLose = false;
+                pk.obj_Locked.SetActive(false);
+                pk.obj_Unlocked.SetActive(true);
+                pk.isOccupied = false;
+                pk.isLocked = false;
+                parkingLotManager.listParkingSpaces_current.Add(pk);
+                // GameManager.Instance.maxAdsManager.ResetOnUserEarnedReward();
+                break;
             }
-        };
-        
-        GameManager.Instance.maxAdsManager.ShowRewarded();
+        }
+        // };
+
+        // GameManager.Instance.maxAdsManager.ShowRewarded();
     }
 }

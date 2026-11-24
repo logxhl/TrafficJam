@@ -1,0 +1,23 @@
+# ninja log v5
+30	19181	1795489086155684591	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	55bce9a510a800d
+30	20706	1795489087676073869	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	3d7e61087a836963
+19186	30930	1795489097872720297	/Users/Shared/projects/Unity/GameUnity/bus-frenzy-traffic-jam/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/36452j73/obj/arm64-v8a/libswappywrapper.so	43dffb3f35c063ce
+30	20674	1795489087640815778	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	97e4caedf3c6a92d
+30	20637	1795489087604562062	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	8cfc52bc21d41d57
+29	20668	1795489087639099694	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	924ba4dcaad5f289
+30	20874	1795489087843682737	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	db2c010917ed305
+30	20790	1795489087760609386	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	262816862a10be9e
+29	20740	1795489087708947709	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	5b9ddf178a4931f6
+29	20934	1795489087905762459	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	9632f80d14b42609
+20934	30903	1795489097865415670	/Users/Shared/projects/Unity/GameUnity/bus-frenzy-traffic-jam/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/36452j73/obj/arm64-v8a/libgame.so	ebbf89d36bae86f8
+22	23216	1795489624118024113	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	8fd05e0d818e4697
+14	25176	1795489626067119871	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	18016d94128d702b
+14	25199	1795489626095542886	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	d4d08a90019c0567
+15	25217	1795489626112227437	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	552bb38a2459b670
+13	25250	1795489626149643207	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	fad3a3cf192719f4
+13	25336	1795489626228706208	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	9fbcdf903d9603b4
+18	25369	1795489626263717185	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	c9b336ce200c5da9
+14	25558	1795489626457525331	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	30503bd4799bbf48
+13	25615	1795489626514878279	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	28d1c04f417a7a14
+25615	38248	1795489639132846989	/Users/Shared/projects/Unity/GameUnity/bus-frenzy-traffic-jam/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/36452j73/obj/arm64-v8a/libgame.so	39a8be2e8dc9369e
+23220	38266	1795489639136853866	/Users/Shared/projects/Unity/GameUnity/bus-frenzy-traffic-jam/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/36452j73/obj/arm64-v8a/libswappywrapper.so	ef65a638ae90cc0d

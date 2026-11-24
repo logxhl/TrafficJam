@@ -10,12 +10,12 @@ public class GameManager : MonoBehaviour
     [Header("-----------Data-----------")]
     public DataManager dataManager;
     [Header("-----------Refs-----------")]
-    public MaxAdsManager maxAdsManager;
-    public AdMobAppOpenManager adMobAppOpenManager;
-    
+    // public MaxAdsManager maxAdsManager;
+    // public AdMobAppOpenManager adMobAppOpenManager;
+
     [Header("-----------Variables-----------")]
     public string sceneName = "SampleScene";
-    
+
     private void Awake()
     {
         if (Instance == null)
@@ -35,15 +35,15 @@ public class GameManager : MonoBehaviour
     public IEnumerator InitializeAsync()
     {
         // Init các service/data 1 lần
-        adMobAppOpenManager.Init();
-        maxAdsManager.InitializeMaxSdk();
+        // adMobAppOpenManager.Init();
+        // maxAdsManager.InitializeMaxSdk();
         dataManager.Init();
         dataManager.LoadData();
-        
+
         yield return null;
         // Kết thúc init
     }
-    
+
     // public void LoadScene(string sceneName)
     // {
     //     // Load the scene with the given name
