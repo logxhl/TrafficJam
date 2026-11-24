@@ -1,0 +1,62 @@
+skeleton.png
+	size: 457, 1873
+	filter: Linear, Linear
+LEVEL COMPLETE
+	bounds: 283, 334, 725, 154
+	rotate: 90
+ball
+	bounds: 265, 155, 177, 177
+	offsets: 2, 3, 182, 182
+board
+	bounds: 2, 1605, 266, 439
+	offsets: 3, 3, 272, 444
+	rotate: 90
+body
+	bounds: 283, 1061, 140, 169
+	offsets: 3, 2, 146, 173
+	rotate: 90
+car
+	bounds: 2, 464, 552, 264
+	offsets: 1, 0, 554, 264
+	rotate: 90
+face
+	bounds: 2, 90, 204, 194
+fx
+	bounds: 220, 332, 18, 43
+	offsets: 0, 0, 18, 44
+	rotate: 90
+fx_ice
+	bounds: 318, 91, 62, 105
+	rotate: 90
+fx_pineapple
+	bounds: 208, 86, 67, 108
+	rotate: 90
+fx_shell
+	bounds: 318, 10, 92, 79
+fx_starfish
+	bounds: 2, 2, 90, 86
+fx_watermelon
+	bounds: 356, 1273, 95, 76
+glasses
+	bounds: 2, 353, 221, 109
+hair_b
+	bounds: 2, 1018, 258, 279
+	offsets: 3, 2, 264, 283
+	rotate: 90
+hair_f
+	bounds: 2, 286, 216, 65
+hat
+	bounds: 356, 1351, 252, 95
+	rotate: 90
+hat_flower
+	bounds: 94, 3, 87, 85
+light
+	bounds: 2, 1278, 352, 325
+	offsets: 0, 0, 353, 325
+mouth
+	bounds: 225, 352, 110, 49
+	offsets: 2, 2, 114, 54
+	rotate: 90
+skirt
+	bounds: 283, 1203, 172, 68
+	offsets: 2, 2, 176, 72

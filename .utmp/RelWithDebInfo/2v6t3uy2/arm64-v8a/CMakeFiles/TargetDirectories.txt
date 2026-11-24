@@ -1,0 +1,8 @@
+C:/Users/Huuwx/Unity/Game/Bus Frenzy - Traffic Jam/.utmp/RelWithDebInfo/2v6t3uy2/arm64-v8a/CMakeFiles/edit_cache.dir
+C:/Users/Huuwx/Unity/Game/Bus Frenzy - Traffic Jam/.utmp/RelWithDebInfo/2v6t3uy2/arm64-v8a/CMakeFiles/rebuild_cache.dir
+C:/Users/Huuwx/Unity/Game/Bus Frenzy - Traffic Jam/.utmp/RelWithDebInfo/2v6t3uy2/arm64-v8a/GameActivity/CMakeFiles/game.dir
+C:/Users/Huuwx/Unity/Game/Bus Frenzy - Traffic Jam/.utmp/RelWithDebInfo/2v6t3uy2/arm64-v8a/GameActivity/CMakeFiles/edit_cache.dir
+C:/Users/Huuwx/Unity/Game/Bus Frenzy - Traffic Jam/.utmp/RelWithDebInfo/2v6t3uy2/arm64-v8a/GameActivity/CMakeFiles/rebuild_cache.dir
+C:/Users/Huuwx/Unity/Game/Bus Frenzy - Traffic Jam/.utmp/RelWithDebInfo/2v6t3uy2/arm64-v8a/FramePacing/CMakeFiles/swappywrapper.dir
+C:/Users/Huuwx/Unity/Game/Bus Frenzy - Traffic Jam/.utmp/RelWithDebInfo/2v6t3uy2/arm64-v8a/FramePacing/CMakeFiles/edit_cache.dir
+C:/Users/Huuwx/Unity/Game/Bus Frenzy - Traffic Jam/.utmp/RelWithDebInfo/2v6t3uy2/arm64-v8a/FramePacing/CMakeFiles/rebuild_cache.dir

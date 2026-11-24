@@ -1,0 +1,32 @@
+skeleton.png
+	size: 1166, 215
+	filter: Linear, Linear
+button_inactive
+	bounds: 215, 19, 273, 194
+button_start_1
+	bounds: 490, 19, 273, 194
+button_start_2
+	bounds: 765, 19, 273, 194
+flower_1
+	bounds: 1040, 144, 69, 61
+	offsets: 0, 0, 70, 61
+	rotate: 90
+flower_2
+	bounds: 1040, 73, 69, 61
+	offsets: 0, 0, 70, 61
+	rotate: 90
+flower_3
+	bounds: 1040, 10, 69, 61
+	offsets: 0, 0, 70, 61
+flower_4
+	bounds: 1103, 144, 69, 61
+	offsets: 0, 0, 70, 61
+	rotate: 90
+fx
+	bounds: 1111, 41, 18, 43
+	offsets: 0, 0, 18, 44
+fx_glow
+	bounds: 2, 2, 211, 211
+	offsets: 10, 10, 224, 231
+light
+	bounds: 1103, 86, 50, 56

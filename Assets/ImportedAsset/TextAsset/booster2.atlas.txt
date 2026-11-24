@@ -1,0 +1,31 @@
+booster2.png
+size:1919,729
+filter:Linear,Linear
+pma:true
+30% OFF
+bounds:2,28,283,67
+offsets:10,0,305,68
+BLITZ
+bounds:872,490,988,237
+offsets:0,2,989,239
+COIN_FIRE
+bounds:1659,2,192,193
+offsets:1,1,195,195
+FIRE
+bounds:1659,197,258,291
+VFX
+bounds:872,29,439,459
+offsets:8,10,454,487
+back
+bounds:2,97,868,630
+offsets:1,1,871,632
+car
+bounds:1313,142,344,346
+offsets:7,5,354,352
+on all coin spent
+bounds:287,11,311,48
+offsets:30,2,366,54
+soc
+bounds:287,61,34,473
+offsets:1,1,36,475
+rotate:90

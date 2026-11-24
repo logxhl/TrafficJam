@@ -1,0 +1,52 @@
+skeleton.png
+	size: 689, 689
+	filter: Linear, Linear
+board
+	bounds: 374, 577, 288, 110
+board_shadow
+	bounds: 304, 14, 175, 90
+	offsets: 9, 8, 196, 107
+	rotate: 90
+body
+	bounds: 396, 83, 104, 101
+flash
+	bounds: 609, 220, 59, 68
+glasses
+	bounds: 198, 13, 176, 104
+	offsets: 0, 1, 176, 114
+	rotate: 90
+hair
+	bounds: 2, 367, 349, 156
+hat
+	bounds: 582, 290, 193, 91
+	offsets: 0, 2, 193, 93
+	rotate: 90
+hat_flower
+	bounds: 502, 101, 83, 81
+	offsets: 2, 2, 87, 85
+	rotate: 90
+head
+	bounds: 2, 2, 194, 187
+hola
+	bounds: 415, 186, 127, 99
+leg_b
+	bounds: 396, 11, 86, 70
+leg_f
+	bounds: 544, 205, 63, 80
+trail
+	bounds: 384, 287, 196, 196
+	offsets: 1, 2, 198, 199
+wave
+	bounds: 335, 191, 78, 65
+wave_bot
+	bounds: 2, 525, 370, 162
+wave_foam
+	bounds: 2, 191, 331, 65
+wave_shadow
+	bounds: 374, 485, 275, 90
+	offsets: 31, 27, 324, 152
+wave_spray
+	bounds: 384, 258, 27, 27
+	offsets: 0, 0, 28, 27
+wave_top
+	bounds: 2, 258, 380, 107

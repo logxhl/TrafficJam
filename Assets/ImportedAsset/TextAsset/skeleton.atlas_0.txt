@@ -1,0 +1,32 @@
+skeleton.png
+	size: 602, 1119
+	filter: Linear, Linear
+HO
+	bounds: 2, 108, 504, 257
+	rotate: 90
+car
+	bounds: 2, 614, 503, 402
+	offsets: 9, 8, 521, 528
+	rotate: 90
+deer_body
+	bounds: 406, 624, 204, 146
+	offsets: 27, 3, 236, 152
+	rotate: 90
+deer_head
+	bounds: 406, 830, 287, 152
+	offsets: 4, 4, 295, 160
+	rotate: 90
+deer_leg
+	bounds: 449, 64, 120, 65
+	rotate: 90
+gift
+	bounds: 261, 2, 182, 186
+	offsets: 0, 1, 182, 187
+	rotate: 90
+rope
+	bounds: 575, 323, 794, 25
+	rotate: 90
+santa
+	bounds: 261, 186, 426, 312
+	offsets: 0, 0, 426, 322
+	rotate: 90

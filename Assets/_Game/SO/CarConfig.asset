@@ -1,0 +1,397 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f11bf6f3b13561d4ca1ee288d1f20597, type: 3}
+  m_Name: CarConfig
+  m_EditorClassIdentifier: 
+  carInfoConfigs:
+  - carColor: 0
+    carSize: 0
+    carAnimation: {fileID: 9100000, guid: 464747edc739b0942b7825cc6858dfad, type: 2}
+    sprite_GuestInCar: {fileID: 21300000, guid: 4a92701326794d345a323af0311a6873, type: 2}
+    sprite_GarageSign: {fileID: 21300000, guid: 08d9ab3fc506dc14285c9a5451791907, type: 2}
+    listSprite_CarDirections:
+    - {fileID: 21300000, guid: 884885cfd4f002047b1f8250627ea5c3, type: 2}
+    - {fileID: 21300000, guid: 047de5bb7ff578d41b6d873e049de787, type: 2}
+    - {fileID: 21300000, guid: 0f1ac2dd17fd8cc44b6bb8c418e379f9, type: 2}
+    - {fileID: 21300000, guid: b272713c0894dc8468c1a167fc9defbc, type: 2}
+    - {fileID: 21300000, guid: a7fd95393abcada42bba42f86b3c2c87, type: 2}
+    - {fileID: 21300000, guid: 323bf87b9291af94a884e6f4075e5e52, type: 2}
+  - carColor: 0
+    carSize: 1
+    carAnimation: {fileID: 9100000, guid: 464747edc739b0942b7825cc6858dfad, type: 2}
+    sprite_GuestInCar: {fileID: 21300000, guid: 4a92701326794d345a323af0311a6873, type: 2}
+    sprite_GarageSign: {fileID: 21300000, guid: 08d9ab3fc506dc14285c9a5451791907, type: 2}
+    listSprite_CarDirections:
+    - {fileID: 21300000, guid: 7d92a77a834c7b44bb69a4a7108e7c83, type: 2}
+    - {fileID: 21300000, guid: 1ed6f6495f80cd34d9c07c3e76a81e25, type: 2}
+    - {fileID: 21300000, guid: 6689d3be7149b5a4388b4b5ee0c59b29, type: 2}
+    - {fileID: 21300000, guid: 35c8abc3e858b8d41b7734f32fd2838a, type: 2}
+    - {fileID: 21300000, guid: 8649ecd9285e7f740bc45016f27a618c, type: 2}
+    - {fileID: 21300000, guid: 48bdbb953ebac1e45adad1d298373100, type: 2}
+  - carColor: 0
+    carSize: 2
+    carAnimation: {fileID: 9100000, guid: 464747edc739b0942b7825cc6858dfad, type: 2}
+    sprite_GuestInCar: {fileID: 21300000, guid: 4a92701326794d345a323af0311a6873, type: 2}
+    sprite_GarageSign: {fileID: 21300000, guid: 08d9ab3fc506dc14285c9a5451791907, type: 2}
+    listSprite_CarDirections:
+    - {fileID: 21300000, guid: 97ba18b3938fd03408595dc88d554dd2, type: 2}
+    - {fileID: 21300000, guid: cae9e5aaa4be57240906c963ff1f729a, type: 2}
+    - {fileID: 21300000, guid: c78fecd857762a645be7e2151cdf39a9, type: 2}
+    - {fileID: 21300000, guid: cd53d168973be1e4883b1c132709d9ba, type: 2}
+    - {fileID: 21300000, guid: 0c3140206921a034582abd527ccef4e7, type: 2}
+    - {fileID: 21300000, guid: c6e5b1b7bb1b2be4fa0f2c13872fe446, type: 2}
+  - carColor: 1
+    carSize: 0
+    carAnimation: {fileID: 9100000, guid: 464747edc739b0942b7825cc6858dfad, type: 2}
+    sprite_GuestInCar: {fileID: 21300000, guid: 22583b4cdedbce54b8e8ba95ec5709da, type: 2}
+    sprite_GarageSign: {fileID: 21300000, guid: 5ae7a5a23fd1dd34cb360861510382fd, type: 2}
+    listSprite_CarDirections:
+    - {fileID: 21300000, guid: c648fd8d44e2eed4988928e8b2ac69a5, type: 2}
+    - {fileID: 21300000, guid: 559af93c3633e374aa545c616669ec75, type: 2}
+    - {fileID: 21300000, guid: bc5595ca54a193941836ee9077f23638, type: 2}
+    - {fileID: 21300000, guid: 13e455a2d3c253b4a8faf0358cb6af9f, type: 2}
+    - {fileID: 21300000, guid: 53d41d642b0eb874a8a1eddb6b3b878f, type: 2}
+    - {fileID: 21300000, guid: 33171fd50debde24ba73e74d4158eccb, type: 2}
+  - carColor: 1
+    carSize: 1
+    carAnimation: {fileID: 9100000, guid: 464747edc739b0942b7825cc6858dfad, type: 2}
+    sprite_GuestInCar: {fileID: 21300000, guid: 22583b4cdedbce54b8e8ba95ec5709da, type: 2}
+    sprite_GarageSign: {fileID: 21300000, guid: 5ae7a5a23fd1dd34cb360861510382fd, type: 2}
+    listSprite_CarDirections:
+    - {fileID: 21300000, guid: da969ed9e4efbf549a34b5796b51d638, type: 2}
+    - {fileID: 21300000, guid: d5a5357b5932a6d47856ef8c09697535, type: 2}
+    - {fileID: 21300000, guid: 25c1ac0779a337443be620d748fd8943, type: 2}
+    - {fileID: 21300000, guid: ea6bda2c2e8d4d748802aaef09d36ddb, type: 2}
+    - {fileID: 21300000, guid: dc03f61e605360b4a9090631e2748595, type: 2}
+    - {fileID: 21300000, guid: e1f72f9afcb83474a82495bf1d83c057, type: 2}
+  - carColor: 1
+    carSize: 2
+    carAnimation: {fileID: 9100000, guid: 464747edc739b0942b7825cc6858dfad, type: 2}
+    sprite_GuestInCar: {fileID: 21300000, guid: 22583b4cdedbce54b8e8ba95ec5709da, type: 2}
+    sprite_GarageSign: {fileID: 21300000, guid: 5ae7a5a23fd1dd34cb360861510382fd, type: 2}
+    listSprite_CarDirections:
+    - {fileID: 21300000, guid: 80b7a741d08f6cb47ab4447aca423062, type: 2}
+    - {fileID: 21300000, guid: afee0a8a68b79574fb5f01cc019b3986, type: 2}
+    - {fileID: 21300000, guid: 0a64b0a3857ba584799a4366ace89e3e, type: 2}
+    - {fileID: 21300000, guid: 14d12ae2a7487bd44b0205dad9512661, type: 2}
+    - {fileID: 21300000, guid: ae974d1077232c34a9a9c27f13bd24c2, type: 2}
+    - {fileID: 21300000, guid: 33ed7c66bfcd06d42b5b0f353641fd06, type: 2}
+  - carColor: 2
+    carSize: 0
+    carAnimation: {fileID: 9100000, guid: 464747edc739b0942b7825cc6858dfad, type: 2}
+    sprite_GuestInCar: {fileID: 21300000, guid: 0ebfa6f09cda5bb41aa32d4f20172ed8, type: 2}
+    sprite_GarageSign: {fileID: 21300000, guid: ea3a384791eaeb340a51294ca640991a, type: 2}
+    listSprite_CarDirections:
+    - {fileID: 21300000, guid: 53850c0b30f1dfa499322382b42533de, type: 2}
+    - {fileID: 21300000, guid: 898f3274728d19f44b047b58c40a82d9, type: 2}
+    - {fileID: 21300000, guid: 7409828fdaeb0d14786194708683a3ad, type: 2}
+    - {fileID: 21300000, guid: f2a7ba5b0b40866418a9fd72828610af, type: 2}
+    - {fileID: 21300000, guid: f84c66ede2c825b4d8cd5cae905a9e24, type: 2}
+    - {fileID: 21300000, guid: 47cf3d8c9368c3349a7881e46b087ade, type: 2}
+  - carColor: 2
+    carSize: 1
+    carAnimation: {fileID: 9100000, guid: 464747edc739b0942b7825cc6858dfad, type: 2}
+    sprite_GuestInCar: {fileID: 21300000, guid: 0ebfa6f09cda5bb41aa32d4f20172ed8, type: 2}
+    sprite_GarageSign: {fileID: 21300000, guid: ea3a384791eaeb340a51294ca640991a, type: 2}
+    listSprite_CarDirections:
+    - {fileID: 21300000, guid: 5db8de01903862b4a9059fa38db43af5, type: 2}
+    - {fileID: 21300000, guid: 23868eabe4ab5c74bb2e0de99c2df9ea, type: 2}
+    - {fileID: 21300000, guid: d95c351bb004bae479c5567b919b3dc7, type: 2}
+    - {fileID: 21300000, guid: e75b90d8d0ba9774f995db18ff11d364, type: 2}
+    - {fileID: 21300000, guid: 159bc5acd13eda84ea6bd498dd5f4eec, type: 2}
+    - {fileID: 21300000, guid: e9a75eb2fcf435041ae8c2816af1bed3, type: 2}
+  - carColor: 2
+    carSize: 2
+    carAnimation: {fileID: 9100000, guid: 464747edc739b0942b7825cc6858dfad, type: 2}
+    sprite_GuestInCar: {fileID: 21300000, guid: 0ebfa6f09cda5bb41aa32d4f20172ed8, type: 2}
+    sprite_GarageSign: {fileID: 21300000, guid: ea3a384791eaeb340a51294ca640991a, type: 2}
+    listSprite_CarDirections:
+    - {fileID: 21300000, guid: fa78ca22601add648979551d6ab87da9, type: 2}
+    - {fileID: 21300000, guid: 500eaf02e4ae6a543b0d5c756bb65122, type: 2}
+    - {fileID: 21300000, guid: 5b40f4158c2d70f46ab2449c7ade6a84, type: 2}
+    - {fileID: 21300000, guid: 38432d832c37c6243a597060529ad365, type: 2}
+    - {fileID: 21300000, guid: f36dbf648498aad469e8738c720f4d67, type: 2}
+    - {fileID: 21300000, guid: 593ea0a1a60c75b4fade3524cfb11695, type: 2}
+  - carColor: 3
+    carSize: 0
+    carAnimation: {fileID: 9100000, guid: 464747edc739b0942b7825cc6858dfad, type: 2}
+    sprite_GuestInCar: {fileID: 21300000, guid: 71d5f44cab8fbbb458917ff1f9024f31, type: 2}
+    sprite_GarageSign: {fileID: 21300000, guid: 0628ec86c90d81346bee24a35d08c86e, type: 2}
+    listSprite_CarDirections:
+    - {fileID: 21300000, guid: 6d15d4ab91333734cad5b678db08bc46, type: 2}
+    - {fileID: 21300000, guid: 38b11a12f7d44ab4889dbd015be6886c, type: 2}
+    - {fileID: 21300000, guid: ff147c05e00cb874aa899646736704a2, type: 2}
+    - {fileID: 21300000, guid: 7110e23f1ea5a0d49b509d00498ae701, type: 2}
+    - {fileID: 21300000, guid: e8fb15d244474794b829a4f1f46437f7, type: 2}
+    - {fileID: 21300000, guid: 9fa8072272b22704cbfa1dd486504733, type: 2}
+  - carColor: 3
+    carSize: 1
+    carAnimation: {fileID: 9100000, guid: 464747edc739b0942b7825cc6858dfad, type: 2}
+    sprite_GuestInCar: {fileID: 21300000, guid: 71d5f44cab8fbbb458917ff1f9024f31, type: 2}
+    sprite_GarageSign: {fileID: 21300000, guid: 0628ec86c90d81346bee24a35d08c86e, type: 2}
+    listSprite_CarDirections:
+    - {fileID: 21300000, guid: c159bf4b779f94147a1cef3fdcf0e994, type: 2}
+    - {fileID: 21300000, guid: eae44316973492349bd5e79bf908f461, type: 2}
+    - {fileID: 21300000, guid: 093c2d44fa6b60a42a1b94699dcfc33e, type: 2}
+    - {fileID: 21300000, guid: b5c9451ad689a7c418c95e4183418ce6, type: 2}
+    - {fileID: 21300000, guid: 65541c1c18c03ca4fb2741efb5eb2253, type: 2}
+    - {fileID: 21300000, guid: f341e82e29e6ca24e8c3a9d2a2779b2c, type: 2}
+  - carColor: 3
+    carSize: 2
+    carAnimation: {fileID: 9100000, guid: 464747edc739b0942b7825cc6858dfad, type: 2}
+    sprite_GuestInCar: {fileID: 21300000, guid: 71d5f44cab8fbbb458917ff1f9024f31, type: 2}
+    sprite_GarageSign: {fileID: 21300000, guid: 0628ec86c90d81346bee24a35d08c86e, type: 2}
+    listSprite_CarDirections:
+    - {fileID: 21300000, guid: dc33dc1445bfee547aada9183da18f85, type: 2}
+    - {fileID: 21300000, guid: 8e4874bb51a69684682cd3ba41cc704f, type: 2}
+    - {fileID: 21300000, guid: 1d26de3e02d3c6f4a84949e1ce44bebc, type: 2}
+    - {fileID: 21300000, guid: 4a0e3db352a611f48a57843718cf071f, type: 2}
+    - {fileID: 21300000, guid: db95049aa40c8f54c85d94774898cbbc, type: 2}
+    - {fileID: 21300000, guid: b1424e02249b6bd42b12ef8095a2d463, type: 2}
+  - carColor: 4
+    carSize: 0
+    carAnimation: {fileID: 9100000, guid: 464747edc739b0942b7825cc6858dfad, type: 2}
+    sprite_GuestInCar: {fileID: 21300000, guid: 59c5e4375c6c64d4b8961bf36bdd1833, type: 2}
+    sprite_GarageSign: {fileID: 0}
+    listSprite_CarDirections:
+    - {fileID: 21300000, guid: 375f2cfbc056aeb45a51d2d1cb232d96, type: 2}
+    - {fileID: 21300000, guid: 8e0ac512daadd5a4ea3becfcf914d68e, type: 2}
+    - {fileID: 21300000, guid: 9bae92468c7c3a34eac1615cadb2455b, type: 2}
+    - {fileID: 21300000, guid: c92ea9bef016ac440ac000bcd4073449, type: 2}
+    - {fileID: 21300000, guid: 4eba14041fbac0b4d8afc35248b05544, type: 2}
+    - {fileID: 21300000, guid: 367e6bca97473cc4893c730be734c183, type: 2}
+  - carColor: 4
+    carSize: 1
+    carAnimation: {fileID: 9100000, guid: 464747edc739b0942b7825cc6858dfad, type: 2}
+    sprite_GuestInCar: {fileID: 21300000, guid: 59c5e4375c6c64d4b8961bf36bdd1833, type: 2}
+    sprite_GarageSign: {fileID: 0}
+    listSprite_CarDirections:
+    - {fileID: 21300000, guid: f7a316f049e196b4aaee5630e24f07b5, type: 2}
+    - {fileID: 21300000, guid: d44d2f78baf6c12409d97400c15894e3, type: 2}
+    - {fileID: 21300000, guid: c68099479a5d55243981677d2f376068, type: 2}
+    - {fileID: 21300000, guid: 356e1a102d2caef489a23d5b3a1c700b, type: 2}
+    - {fileID: 21300000, guid: e3a6fe3eac970da44ade1c5594f5798d, type: 2}
+    - {fileID: 21300000, guid: 69f1f0679f57a2a4396af6a3af33a88f, type: 2}
+  - carColor: 4
+    carSize: 2
+    carAnimation: {fileID: 9100000, guid: 464747edc739b0942b7825cc6858dfad, type: 2}
+    sprite_GuestInCar: {fileID: 21300000, guid: 59c5e4375c6c64d4b8961bf36bdd1833, type: 2}
+    sprite_GarageSign: {fileID: 0}
+    listSprite_CarDirections:
+    - {fileID: 21300000, guid: 235b404c98ffbb7429a97162ac80140d, type: 2}
+    - {fileID: 21300000, guid: cbd76d48a1b968445a34594f2aecb8bb, type: 2}
+    - {fileID: 21300000, guid: 4a1fc755bc5eef042bf89f0a55e8e144, type: 2}
+    - {fileID: 21300000, guid: d932cc60a2eda894a9a67ad0c5811a8c, type: 2}
+    - {fileID: 21300000, guid: 80655d8a727d65b44a3ea06485d3c4ab, type: 2}
+    - {fileID: 21300000, guid: 371b7b4398ef2104588a5306727bf39c, type: 2}
+  - carColor: 5
+    carSize: 0
+    carAnimation: {fileID: 9100000, guid: 464747edc739b0942b7825cc6858dfad, type: 2}
+    sprite_GuestInCar: {fileID: 21300000, guid: e7fa9b42c25d60f4db4b7c3832041ae3, type: 2}
+    sprite_GarageSign: {fileID: 21300000, guid: 77fdca9d7dc3d0c4dba0357a907a2a5f, type: 2}
+    listSprite_CarDirections:
+    - {fileID: 21300000, guid: 5036a810ed5eaa649a0b38f1279226cf, type: 2}
+    - {fileID: 21300000, guid: f2dd5fba5e39e3c4a81899f50b324517, type: 2}
+    - {fileID: 21300000, guid: def41612a427a734881787ca440e98b5, type: 2}
+    - {fileID: 21300000, guid: 5900fad049eb85a44afa10c5b19ee854, type: 2}
+    - {fileID: 21300000, guid: e5f39c8e3e6871e48abcd36fec7961a1, type: 2}
+    - {fileID: 21300000, guid: 96a757ded6682ff4bbf1dc57cd31a26d, type: 2}
+  - carColor: 5
+    carSize: 1
+    carAnimation: {fileID: 9100000, guid: 464747edc739b0942b7825cc6858dfad, type: 2}
+    sprite_GuestInCar: {fileID: 21300000, guid: e7fa9b42c25d60f4db4b7c3832041ae3, type: 2}
+    sprite_GarageSign: {fileID: 21300000, guid: 77fdca9d7dc3d0c4dba0357a907a2a5f, type: 2}
+    listSprite_CarDirections:
+    - {fileID: 21300000, guid: 194d9f8182e8bcd499232f964e5cf7d1, type: 2}
+    - {fileID: 21300000, guid: 556298350d5fcf346bee428722688137, type: 2}
+    - {fileID: 21300000, guid: 7df7b04b04fc04e41bd625c39a3afa2f, type: 2}
+    - {fileID: 21300000, guid: 770fc2582950a9d40b4409bb5bc95a81, type: 2}
+    - {fileID: 21300000, guid: 7253e23094146dd4993eae42bdf0c9a6, type: 2}
+    - {fileID: 21300000, guid: 753625cd4e340934aa292421a6a0f621, type: 2}
+  - carColor: 5
+    carSize: 2
+    carAnimation: {fileID: 9100000, guid: 464747edc739b0942b7825cc6858dfad, type: 2}
+    sprite_GuestInCar: {fileID: 21300000, guid: e7fa9b42c25d60f4db4b7c3832041ae3, type: 2}
+    sprite_GarageSign: {fileID: 21300000, guid: 77fdca9d7dc3d0c4dba0357a907a2a5f, type: 2}
+    listSprite_CarDirections:
+    - {fileID: 21300000, guid: 67d6bd8dae691c2448f287503fd2d45d, type: 2}
+    - {fileID: 21300000, guid: 0f4a1e9a9fcdae445a214d25a8c8fce8, type: 2}
+    - {fileID: 21300000, guid: 0622fdd877e25ed4685bcce5457e76e1, type: 2}
+    - {fileID: 21300000, guid: a2dc7366c8a4bcb429460c2de8b8e424, type: 2}
+    - {fileID: 21300000, guid: 0e1855161d33dea4d99c9b8bf7387794, type: 2}
+    - {fileID: 21300000, guid: 3baa9ec19a6e9614c9fd08e23c42a8ce, type: 2}
+  - carColor: 6
+    carSize: 0
+    carAnimation: {fileID: 9100000, guid: 464747edc739b0942b7825cc6858dfad, type: 2}
+    sprite_GuestInCar: {fileID: 21300000, guid: 7cdacd89faca5c64abf5c5653bc770b8, type: 2}
+    sprite_GarageSign: {fileID: 21300000, guid: 4f2afe51586d7644d9762ef653d05954, type: 2}
+    listSprite_CarDirections:
+    - {fileID: 21300000, guid: 1b8654e85d71a6a46982b02409b69f3f, type: 2}
+    - {fileID: 21300000, guid: e405455447603d648bf75ed6244af191, type: 2}
+    - {fileID: 21300000, guid: 39f79bef2acb8854399303978b6eddcd, type: 2}
+    - {fileID: 21300000, guid: bf8a995fc57b1bf458ed92e99afaf510, type: 2}
+    - {fileID: 21300000, guid: c7c0211907cb0b0499763123c66cbb9f, type: 2}
+    - {fileID: 21300000, guid: 20e4f2b9babc47a4c9152b49e617ae27, type: 2}
+  - carColor: 6
+    carSize: 1
+    carAnimation: {fileID: 9100000, guid: 464747edc739b0942b7825cc6858dfad, type: 2}
+    sprite_GuestInCar: {fileID: 21300000, guid: 7cdacd89faca5c64abf5c5653bc770b8, type: 2}
+    sprite_GarageSign: {fileID: 21300000, guid: 4f2afe51586d7644d9762ef653d05954, type: 2}
+    listSprite_CarDirections:
+    - {fileID: 21300000, guid: 24a0e8ab0e6d47d49a6c12bda9f99900, type: 2}
+    - {fileID: 21300000, guid: 4aacf5f1a04bd404abe2d8df0eed2be8, type: 2}
+    - {fileID: 21300000, guid: c1adfec42ae35b04dbf130a115cb82f9, type: 2}
+    - {fileID: 21300000, guid: 4ee64d9d138226548840e10edb1d1657, type: 2}
+    - {fileID: 21300000, guid: 17eb6b4b289b85948a0086ca0761be0c, type: 2}
+    - {fileID: 21300000, guid: 8fbeb02abf07a3b41b5abfb270753999, type: 2}
+  - carColor: 6
+    carSize: 2
+    carAnimation: {fileID: 9100000, guid: 464747edc739b0942b7825cc6858dfad, type: 2}
+    sprite_GuestInCar: {fileID: 21300000, guid: 7cdacd89faca5c64abf5c5653bc770b8, type: 2}
+    sprite_GarageSign: {fileID: 21300000, guid: 4f2afe51586d7644d9762ef653d05954, type: 2}
+    listSprite_CarDirections:
+    - {fileID: 21300000, guid: fd09ed1f5c0587b479d9aed71bf955ce, type: 2}
+    - {fileID: 21300000, guid: 73c23d133aca9a54ba69260753dd7e14, type: 2}
+    - {fileID: 21300000, guid: 01b091ba1f5b0ff47975d8a42d117eeb, type: 2}
+    - {fileID: 21300000, guid: bd793449c8779be45ab71fcb84ec7527, type: 2}
+    - {fileID: 21300000, guid: 9397f42e5e0447f449ac68de42c94ce8, type: 2}
+    - {fileID: 21300000, guid: 6170390828228f84480bc79abf5fc366, type: 2}
+  - carColor: 7
+    carSize: 0
+    carAnimation: {fileID: 9100000, guid: 464747edc739b0942b7825cc6858dfad, type: 2}
+    sprite_GuestInCar: {fileID: 21300000, guid: 30caf573cfa7235499ff89b207ad4b72, type: 2}
+    sprite_GarageSign: {fileID: 21300000, guid: 881062f3251784149a8ba6f99eff33d3, type: 2}
+    listSprite_CarDirections:
+    - {fileID: 21300000, guid: c1680c686a7ed574f87d60e6d3ef1472, type: 2}
+    - {fileID: 21300000, guid: 1621899861ef3c94b98f078a51750d68, type: 2}
+    - {fileID: 21300000, guid: b0cd8dadc1ff9a84ea4cab9356fd5f2c, type: 2}
+    - {fileID: 21300000, guid: 10d2975b3f4be2b4ba5a2d30b779e383, type: 2}
+    - {fileID: 21300000, guid: fe3d2e7008663fe49b1d22dbe4e79c1f, type: 2}
+    - {fileID: 21300000, guid: 1d943cc34a421fb4aa2fb0ed1d05a8cd, type: 2}
+  - carColor: 7
+    carSize: 1
+    carAnimation: {fileID: 9100000, guid: 464747edc739b0942b7825cc6858dfad, type: 2}
+    sprite_GuestInCar: {fileID: 21300000, guid: 30caf573cfa7235499ff89b207ad4b72, type: 2}
+    sprite_GarageSign: {fileID: 21300000, guid: 881062f3251784149a8ba6f99eff33d3, type: 2}
+    listSprite_CarDirections:
+    - {fileID: 21300000, guid: 83826cf59c296a643b1d7a7033c63140, type: 2}
+    - {fileID: 21300000, guid: 26b8dfc373f58d74082d564274d9cc8e, type: 2}
+    - {fileID: 21300000, guid: 25cdbecc60a22dc478adf87b0663da47, type: 2}
+    - {fileID: 21300000, guid: 10b8159f2dab146468d7653287383bbc, type: 2}
+    - {fileID: 21300000, guid: 3485acfaffef92448a9adc6e35fe8853, type: 2}
+    - {fileID: 21300000, guid: 886f44ce1d2fc7e4ca34a85f7299a871, type: 2}
+  - carColor: 7
+    carSize: 2
+    carAnimation: {fileID: 9100000, guid: 464747edc739b0942b7825cc6858dfad, type: 2}
+    sprite_GuestInCar: {fileID: 21300000, guid: 30caf573cfa7235499ff89b207ad4b72, type: 2}
+    sprite_GarageSign: {fileID: 21300000, guid: 881062f3251784149a8ba6f99eff33d3, type: 2}
+    listSprite_CarDirections:
+    - {fileID: 21300000, guid: 78c6942253415be448774f66507422ab, type: 2}
+    - {fileID: 21300000, guid: 99c6f336e5eed824a8a1573643ff6eb1, type: 2}
+    - {fileID: 21300000, guid: 147a953ae5a79894e8684016e925d79b, type: 2}
+    - {fileID: 21300000, guid: 167ceb5e6b2eebf4983490dacb3ddd02, type: 2}
+    - {fileID: 21300000, guid: b368eb3a56d560c46ad1e1e316337988, type: 2}
+    - {fileID: 21300000, guid: 4a846cc16d6291342924ebf7d4f16d4d, type: 2}
+  - carColor: 8
+    carSize: 0
+    carAnimation: {fileID: 9100000, guid: 464747edc739b0942b7825cc6858dfad, type: 2}
+    sprite_GuestInCar: {fileID: 21300000, guid: febfc858b4a90404489f7204ddb4132c, type: 2}
+    sprite_GarageSign: {fileID: 0}
+    listSprite_CarDirections:
+    - {fileID: 21300000, guid: da6bb634e12711e4dbd0922bf3127c51, type: 2}
+    - {fileID: 21300000, guid: 815e3c74d44ec0c4184d725962826d65, type: 2}
+    - {fileID: 21300000, guid: 97f5f246d27778c43a01bd53295a2ab4, type: 2}
+    - {fileID: 21300000, guid: 5b4961cf206c0fa498f503034bff065d, type: 2}
+    - {fileID: 21300000, guid: 4e6e0cf04425c8a4189340c6dbefc618, type: 2}
+    - {fileID: 21300000, guid: d5106a2aa33bb8744a9de0289efdb510, type: 2}
+  - carColor: 8
+    carSize: 1
+    carAnimation: {fileID: 9100000, guid: 464747edc739b0942b7825cc6858dfad, type: 2}
+    sprite_GuestInCar: {fileID: 21300000, guid: febfc858b4a90404489f7204ddb4132c, type: 2}
+    sprite_GarageSign: {fileID: 0}
+    listSprite_CarDirections:
+    - {fileID: 21300000, guid: b686e0a907d05e640822aecca2c55c2d, type: 2}
+    - {fileID: 21300000, guid: 0c83f0531ba72024ca8378b73c4bf2dc, type: 2}
+    - {fileID: 21300000, guid: 155f531320118a648b809868c51f8b2f, type: 2}
+    - {fileID: 21300000, guid: 67b715500367d27419f698f5197ce5af, type: 2}
+    - {fileID: 21300000, guid: f338f049f38d84147a0370e4d1ccaabb, type: 2}
+    - {fileID: 21300000, guid: 88ef6d0a6048f8b4b8404bef9c12e74c, type: 2}
+  - carColor: 8
+    carSize: 2
+    carAnimation: {fileID: 9100000, guid: 464747edc739b0942b7825cc6858dfad, type: 2}
+    sprite_GuestInCar: {fileID: 21300000, guid: febfc858b4a90404489f7204ddb4132c, type: 2}
+    sprite_GarageSign: {fileID: 0}
+    listSprite_CarDirections:
+    - {fileID: 21300000, guid: 64fafe98defae0041a67c0b364bb4e2c, type: 2}
+    - {fileID: 21300000, guid: fd62ec32fe28d7d40b18770df381d6ac, type: 2}
+    - {fileID: 21300000, guid: d8ac9c60e7f821e4583ac949a87fbd40, type: 2}
+    - {fileID: 21300000, guid: 9b5c31aec5abf7d4b842a9cbb0f4e2b8, type: 2}
+    - {fileID: 21300000, guid: 4861633c9e5273b4bb9aa3c503fba27a, type: 2}
+    - {fileID: 21300000, guid: 811801eb8cb0d0343a4a622b081df86a, type: 2}
+  - carColor: 9
+    carSize: 0
+    carAnimation: {fileID: 9100000, guid: 464747edc739b0942b7825cc6858dfad, type: 2}
+    sprite_GuestInCar: {fileID: 21300000, guid: e67a86fd19e63b741978775c44d3e8de, type: 2}
+    sprite_GarageSign: {fileID: 0}
+    listSprite_CarDirections:
+    - {fileID: 21300000, guid: 191365728a267f74d9b1793f07c46941, type: 2}
+    - {fileID: 21300000, guid: 5774e388d6436574c92d59124ccf09ed, type: 2}
+    - {fileID: 21300000, guid: b3153c7150301d246bd65e78df2baac5, type: 2}
+    - {fileID: 21300000, guid: dfc9a29726da46a48a73e8030dd2f9a6, type: 2}
+    - {fileID: 21300000, guid: d15a80fb1dc0f9543891d0ed9718049b, type: 2}
+    - {fileID: 21300000, guid: 53a335a296a8f9d4d9bff935a0bd49bb, type: 2}
+  - carColor: 9
+    carSize: 1
+    carAnimation: {fileID: 9100000, guid: 464747edc739b0942b7825cc6858dfad, type: 2}
+    sprite_GuestInCar: {fileID: 21300000, guid: e67a86fd19e63b741978775c44d3e8de, type: 2}
+    sprite_GarageSign: {fileID: 0}
+    listSprite_CarDirections:
+    - {fileID: 21300000, guid: 222dcd976b2062340918efa163795e66, type: 2}
+    - {fileID: 21300000, guid: bc129b645c399c14597175eabafad3ad, type: 2}
+    - {fileID: 21300000, guid: 20e039bcd05de4e458d996f1ae23a22c, type: 2}
+    - {fileID: 21300000, guid: 1082716db6280724bb0ce28c54f39ece, type: 2}
+    - {fileID: 21300000, guid: 966c7e7db781ef24cbcc8a4324b2df7b, type: 2}
+    - {fileID: 21300000, guid: b36c8106784458e4e809f492eb7304a2, type: 2}
+  - carColor: 9
+    carSize: 2
+    carAnimation: {fileID: 9100000, guid: 464747edc739b0942b7825cc6858dfad, type: 2}
+    sprite_GuestInCar: {fileID: 21300000, guid: e67a86fd19e63b741978775c44d3e8de, type: 2}
+    sprite_GarageSign: {fileID: 0}
+    listSprite_CarDirections:
+    - {fileID: 21300000, guid: cefcd143543bd55468566d48763e1799, type: 2}
+    - {fileID: 21300000, guid: 91f0a462c70417c40b84372de44b07ad, type: 2}
+    - {fileID: 21300000, guid: 50b23ef60a33d094f883caf0c753a340, type: 2}
+    - {fileID: 21300000, guid: 581f668167b1d464994263079f2e263f, type: 2}
+    - {fileID: 21300000, guid: 8f249220deb999a4da6a80a1c8d2cd96, type: 2}
+    - {fileID: 21300000, guid: 7a7c89ba4f91ed64f85854f49088ff79, type: 2}
+  carSizeConfigs:
+  - carSize: 0
+    slot: 4
+    slotPosition:
+    - {x: 0, y: 0}
+  - carSize: 1
+    slot: 6
+    slotPosition:
+    - {x: 0, y: 0}
+    - {x: 0, y: -1}
+  - carSize: 2
+    slot: 10
+    slotPosition:
+    - {x: 0, y: 0}
+    - {x: 0, y: -1}
+    - {x: 0, y: -2}
+  carDirections:
+  - directions: 0
+    angle: {x: 0, y: 0, z: 0}
+    arrow: {fileID: 0}
+    question: {fileID: 0}
+    colliderConfigs: []

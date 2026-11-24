@@ -1,0 +1,17 @@
+league_fx.png
+	size: 543, 543
+	filter: Linear, Linear
+effect_circle_01
+	bounds: 78, 359, 182, 182
+	offsets: 9, 9, 200, 200
+effect_star
+	bounds: 262, 475, 66, 66
+	offsets: 0, 1, 66, 68
+fx_ring
+	bounds: 78, 214, 143, 143
+	offsets: 2, 2, 147, 147
+light_ray
+	bounds: 2, 2, 74, 539
+	offsets: 5, 3, 84, 553
+paper_work
+	bounds: 78, 186, 26, 26

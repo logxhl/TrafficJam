@@ -1,0 +1,38 @@
+skeleton.png
+	size: 1241, 630
+	filter: Linear, Linear
+Button
+	bounds: 385, 4, 256, 311
+Button_2
+	bounds: 385, 317, 854, 311
+Icon_coin_discount
+	bounds: 1006, 154, 161, 186
+	offsets: 19, 7, 200, 200
+	rotate: 90
+Icon_coin_pack_1
+	bounds: 643, 2, 113, 113
+	offsets: 43, 44, 200, 200
+Icon_coin_pack_3
+	bounds: 1006, 4, 148, 144
+	offsets: 26, 28, 200, 200
+	rotate: 90
+Icon_coin_pack_4
+	bounds: 2, 13, 200, 200
+effect_star
+	bounds: 758, 39, 64, 76
+	offsets: 2, 3, 68, 82
+glow
+	bounds: 2, 215, 358, 413
+	offsets: 4, 4, 366, 421
+icon_shuffle
+	bounds: 824, 118, 197, 180
+	offsets: 1, 10, 200, 200
+	rotate: 90
+icon_sort
+	bounds: 204, 15, 198, 179
+	offsets: 1, 11, 200, 200
+	rotate: 90
+icon_vipslot
+	bounds: 643, 117, 198, 179
+	offsets: 1, 11, 200, 200
+	rotate: 90

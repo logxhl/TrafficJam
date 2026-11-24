@@ -1,0 +1,239 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: FX_Dust
+  m_Shader: {fileID: 4800000, guid: 05aee4116987d5d4cb56e96d3c84e53b, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords:
+  - LIGHTING_FULL
+  - USE_VERTEX_COLOR
+  - _SHADOWMIXMODE_MULTIPLY
+  - _SHARPRIMLIGHT_ON
+  m_LightmapFlags: 0
+  m_EnableInstancingVariants: 1
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: 3000
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties:
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+      _BumpMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+      _EmissionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+      _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+      _MetallicGlossMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+      _OcclusionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+      _texcoord:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: {}
+    m_Floats:
+      _Alpha: 0
+      _AmbientPower: 0.5
+      _Amount: 0
+      _BlendDst: 10
+      _BlendOp: 0
+      _BlendSrc: 1
+      _BumpScale: 1
+      _CameraFadingEnabled: 0
+      _CameraFarFadeDistance: 2
+      _CameraNearFadeDistance: 1
+      _ColorMask: 15
+      _ColorMode: 0
+      _Contrast: 0
+      _Cull: 2
+      _CullMode: 0
+      _Cutoff: 0.5
+      _Desaturation: 0
+      _DetailNormalMapScale: 1
+      _DistortionBlend: 0.5
+      _DistortionEnabled: 0
+      _DistortionStrength: 1
+      _DistortionStrengthScaled: 0
+      _DstBlend: 0
+      _EmissionEnabled: 0
+      _EmissionForce: 1
+      _EmissionFresnelBias: 1
+      _EmissionFresnelPower: 1
+      _EmissionFresnelScale: 1
+      _EmissionIntensity: 1
+      _FlipbookMode: 0
+      _FogAnimationFreq: 0.1
+      _FogAnimationHeight: 0.1
+      _FogDensity: 1
+      _FogEnd: 50
+      _FogHeight: 0.1
+      _FogStart: 0
+      _FogYStartPos: 0
+      _Framerate: 5
+      _FrontLight: 0.7
+      _GlossMapScale: 1
+      _Glossiness: 0.5
+      _GlossyReflections: 1
+      _Glow: 1
+      _GlowIntensity: 1.6
+      _GradientHeight: 1
+      _GradientPower: 1.24
+      _GradientStartY: 0
+      _HideRimUnderShadow: 0
+      _InvFade: 1
+      _InvertOpacityFresnel: 0
+      _LayoutTexturePower: 0.5
+      _LightMaxDistance: 10
+      _LightProbePower: 0.5
+      _LightingEnabled: 0
+      _LightmapPower: 1
+      _MainTexPower: 1
+      _Metallic: 0.895
+      _Mode: 0
+      _OcclusionStrength: 1
+      _OcclussionStrength: 1
+      _Opacity: 1
+      _OpacityFresnelBias: 1
+      _OpacityFresnelPower: 1
+      _OpacityFresnelScale: 1
+      _OpacityMask: 0.7814395
+      _OutlineAlpha: 0
+      _OutlineWidth: 0.1
+      _Parallax: 0.02
+      _RampOffset: 0.5
+      _RampSmooth: 0.6
+      _RampThreshold: 0
+      _ReflectionTextureSpeed: 0
+      _ReflectionTextureStrength: 1
+      _RightLight: 0.9
+      _RimAmount: 0.7
+      _RimGlow: 0.79
+      _RimMax: 1.5
+      _RimMin: 0.3
+      _RimPower: 0
+      _RimWidth: 2.82
+      _SecondaryTextureSize: 1
+      _SecondaryTextureSpeedFactor: 0
+      _SecondaryTextureStrength: 0
+      _ShadowBlur: 1
+      _ShadowMixMode: 0
+      _ShadowPower: 0
+      _ShadowSize: 0.5
+      _ShadowStrength: 1
+      _SharpRimLight: 1
+      _Shininess: 0
+      _Smoothness: 0.427
+      _SmoothnessTextureChannel: 0
+      _SoftParticlesEnabled: 0
+      _SoftParticlesFarFadeDistance: 1
+      _SoftParticlesNearFadeDistance: 0
+      _Specular: 0.01
+      _SpecularFalloff: 1
+      _SpecularForceUnderShadow: 0
+      _SpecularHighlights: 1
+      _SpecularPower: 1
+      _SpecularSize: 0.4
+      _SrcBlend: 1
+      _Stencil: 0
+      _StencilComp: 8
+      _StencilOp: 0
+      _StencilOpFailFront: 0
+      _StencilOpPassFront: 0
+      _StencilOpZFailFront: 0
+      _StencilReadMask: 255
+      _StencilWriteMask: 255
+      _StepAmount: 2
+      _StepWidth: 0.25
+      _TimeQuantize: 5
+      _TopLight: 1
+      _UVSec: 0
+      _UseDirLight: 0
+      _UseEmissionFresnel: 0
+      _UseFogDistance: 0
+      _UseFogStaticStart: 0
+      _UseGradient: 0
+      _UseLightMap: 0
+      _UseOpacityFresnel: 0
+      _UseRampTexture: 0
+      _UseRimLight: 0
+      _UseSpecular: 0
+      _UseUIAlphaClip: 0
+      _UseVertexColors: 0
+      _UseVertexOffset: 0
+      _VertexOffsetFrequency: 2
+      _VertexOffsetMagnitude: 0.05
+      _VertexOffsetX: 0.5
+      _VertexOffsetY: 0.5
+      _VertexOffsetZ: 0.5
+      _ZTest: 167.5171
+      _ZWrite: 0
+      __dirty: 1
+      __dummy__: 0
+      _additiveBlend: 0
+    m_Colors:
+      _AmbientColor: {r: 1, g: 1, b: 1, a: 1}
+      _CameraFadeParams: {r: 0, g: Infinity, b: 0, a: 0}
+      _Color: {r: 0.6117647, g: 0.5372549, b: 0.3215686, a: 1}
+      _ColorAddSubDiff: {r: 0, g: 0, b: 0, a: 0}
+      _DiffuseColor: {r: 1, g: 1, b: 1, a: 1}
+      _EmisColor: {r: 0.2, g: 0.2, b: 0.2, a: 0}
+      _EmissionColor: {r: 0.9245283, g: 0.9245283, b: 0.9245283, a: 1}
+      _FogColor: {r: 1, g: 1, b: 1, a: 1}
+      _FogStaticStartPos: {r: 0, g: 0, b: 0, a: 1}
+      _FrontColor: {r: 1, g: 1, b: 1, a: 0}
+      _FrontColorBottom: {r: 0.7, g: 0.7, b: 0.7, a: 0}
+      _GradientRemap0: {r: 0.6226415, g: 0.6226415, b: 0.6226415, a: 0}
+      _GradientRemap1: {r: 1, g: 1, b: 1, a: 0}
+      _HColor: {r: 1, g: 0.9296451, b: 0.740566, a: 1}
+      _InnerColor: {r: 1, g: 1, b: 1, a: 1}
+      _LeftColor: {r: 0.4245283, g: 0.4245283, b: 0.4245283, a: 1}
+      _LightColor: {r: 1, g: 1, b: 1, a: 1}
+      _LightDirF: {r: 0, g: 0, b: -1, a: 1}
+      _LightDirR: {r: 1, g: 0, b: 0, a: 1}
+      _LightDirT: {r: 0, g: 1, b: 0, a: 1}
+      _LightPos: {r: 0, g: 0, b: 0, a: 1}
+      _LightTint: {r: 1, g: 1, b: 1, a: 1}
+      _LightmapColor: {r: 0, g: 0, b: 0, a: 0}
+      _MainColor: {r: 1, g: 1, b: 1, a: 0}
+      _MainColorBottom: {r: 1, g: 0.73, b: 0.117, a: 0}
+      _MainTexPanningSpeed: {r: 0, g: 0, b: 0, a: 0}
+      _OutlineColor: {r: 0.5451996, g: 1, b: 0, a: 1}
+      _PanSpeed: {r: 0.5, g: 0.5, b: 0, a: 0}
+      _RampDark: {r: 0.3490566, g: 0.3490566, b: 0.3490566, a: 0}
+      _RampLight: {r: 1, g: 1, b: 1, a: 0}
+      _RightColor: {r: 0.9811321, g: 0.9811321, b: 0.9811321, a: 0}
+      _RightColorBottom: {r: 0.9, g: 0.9, b: 0.9, a: 0}
+      _RimColor: {r: 1, g: 1, b: 1, a: 1}
+      _RimColorBottom: {r: 0, g: 0, b: 0, a: 0}
+      _SColor: {r: 0.990566, g: 0.7817689, b: 0.6588199, a: 1}
+      _ShadowColor: {r: 1, g: 0, b: 0.115766, a: 1}
+      _SoftParticleFadeParams: {r: 0, g: 0, b: 0, a: 0}
+      _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
+      _SpecColorc: {r: 1, g: 1, b: 1, a: 0}
+      _SpecularColor: {r: 2, g: 2, b: 2, a: 1}
+      _Tint: {r: 1, g: 1, b: 1, a: 1}
+      _TintColor: {r: 0.5, g: 0.5, b: 0.5, a: 0.5}
+      _TopColor: {r: 1, g: 1, b: 1, a: 0}
+      _TopColorBottom: {r: 1, g: 1, b: 1, a: 0}
+  m_BuildTextureStacks: []

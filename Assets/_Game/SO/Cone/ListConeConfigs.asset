@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c499cf7c86c7e414a9860f40132ef94b, type: 3}
+  m_Name: ListConeConfigs
+  m_EditorClassIdentifier: 
+  listConeConfigs:
+  - {fileID: 11400000, guid: 25ba1f7613dd2ff44b042d6d07ca776c, type: 2}
+  - {fileID: 11400000, guid: f5e8b8d7e62628f41981375361e39ec7, type: 2}
+  - {fileID: 11400000, guid: 923043090c14e4f498a701e9a1387999, type: 2}
+  - {fileID: 11400000, guid: cfb2b012d5d8ae242af2b07eed75f93f, type: 2}
+  - {fileID: 11400000, guid: b82f8ea9df961a94991a344e76efa86a, type: 2}
+  - {fileID: 11400000, guid: 3a8e4fdc21d415a42b8cb0752b2a7ed7, type: 2}
+  - {fileID: 11400000, guid: b0d7b343a4fa0ea43aa66cb8bbdc02a6, type: 2}
+  - {fileID: 11400000, guid: 8488bdbb92bb2104f8fe539aaf06a74e, type: 2}
+  - {fileID: 11400000, guid: c011729733a01274091cc746d990f59f, type: 2}
+  - {fileID: 11400000, guid: f019995bf3191d443ad8f7d7f26c6ad8, type: 2}

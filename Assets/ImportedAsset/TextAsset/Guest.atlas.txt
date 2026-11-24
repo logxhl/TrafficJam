@@ -1,0 +1,117 @@
+Guest.png
+	size: 404, 404
+	filter: Linear, Linear
+blue/body
+	bounds: 350, 348, 54, 52
+	rotate: 90
+blue/face
+	bounds: 2, 325, 83, 77
+	offsets: 0, 0, 83, 79
+blue/face_f
+	bounds: 2, 246, 83, 77
+	offsets: 0, 0, 83, 79
+blue/hat
+	bounds: 87, 167, 84, 67
+	offsets: 2, 2, 88, 71
+blue/hat_f
+	bounds: 87, 236, 87, 71
+	offsets: 0, 0, 88, 71
+	rotate: 90
+blue/leg1
+	bounds: 322, 259, 23, 33
+	offsets: 2, 2, 27, 37
+blue/leg2
+	bounds: 322, 294, 24, 35
+	offsets: 1, 1, 27, 37
+cyan/body
+	bounds: 350, 292, 54, 52
+	rotate: 90
+cyan/hat
+	bounds: 172, 331, 87, 71
+	offsets: 0, 0, 88, 71
+cyan/hat_f
+	bounds: 2, 78, 87, 71
+	offsets: 0, 0, 88, 71
+	rotate: 90
+cyan/leg1
+	bounds: 269, 52, 23, 33
+	offsets: 2, 2, 27, 37
+cyan/leg2
+	bounds: 269, 113, 24, 35
+	offsets: 1, 1, 27, 37
+green/body
+	bounds: 173, 182, 54, 52
+green/hat
+	bounds: 261, 331, 87, 71
+	offsets: 0, 0, 88, 71
+green/hat_f
+	bounds: 2, 5, 87, 71
+	offsets: 0, 0, 88, 71
+green/leg1
+	bounds: 269, 17, 23, 33
+	offsets: 2, 2, 27, 37
+green/leg2
+	bounds: 295, 113, 24, 35
+	offsets: 1, 1, 27, 37
+old/body
+	bounds: 233, 204, 54, 52
+old/face
+	bounds: 87, 325, 83, 77
+	offsets: 0, 0, 83, 79
+old/face_f
+	bounds: 2, 167, 83, 77
+	offsets: 0, 0, 83, 79
+old/leg1
+	bounds: 347, 266, 24, 35
+	offsets: 1, 1, 27, 37
+	rotate: 90
+pink/body
+	bounds: 289, 204, 54, 52
+pink/hat
+	bounds: 75, 78, 87, 71
+	offsets: 0, 0, 88, 71
+	rotate: 90
+pink/hat_f
+	bounds: 91, 5, 87, 71
+	offsets: 0, 0, 88, 71
+pink/leg1
+	bounds: 294, 52, 23, 33
+	offsets: 2, 2, 27, 37
+pink/leg2
+	bounds: 321, 113, 24, 35
+	offsets: 1, 1, 27, 37
+purple/body
+	bounds: 229, 150, 54, 52
+purple/hat
+	bounds: 148, 78, 87, 71
+	offsets: 0, 0, 88, 71
+	rotate: 90
+purple/hat_f
+	bounds: 180, 5, 87, 71
+	offsets: 0, 0, 88, 71
+purple/leg1
+	bounds: 294, 17, 23, 33
+	offsets: 2, 2, 27, 37
+purple/leg2
+	bounds: 269, 87, 24, 35
+	offsets: 1, 1, 27, 37
+	rotate: 90
+red/body
+	bounds: 285, 150, 54, 52
+red/hat
+	bounds: 160, 236, 87, 71
+	offsets: 0, 0, 88, 71
+	rotate: 90
+red/hat_f
+	bounds: 233, 258, 87, 71
+	offsets: 0, 0, 88, 71
+red/leg1
+	bounds: 319, 52, 23, 33
+	offsets: 2, 2, 27, 37
+red/leg2
+	bounds: 306, 87, 24, 35
+	offsets: 1, 1, 27, 37
+	rotate: 90
+smoke
+	bounds: 221, 101, 46, 47
+	offsets: 2, 2, 51, 51

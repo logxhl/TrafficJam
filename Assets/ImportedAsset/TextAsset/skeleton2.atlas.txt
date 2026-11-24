@@ -1,0 +1,9 @@
+skeleton2.png
+	size: 250, 195
+	filter: Linear, Linear
+ball
+	bounds: 2, 2, 192, 191
+	offsets: 0, 14, 192, 219
+effect_star
+	bounds: 196, 92, 52, 101
+	offsets: 23, 31, 102, 154

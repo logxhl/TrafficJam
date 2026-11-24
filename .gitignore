@@ -1,0 +1,100 @@
+############################
+# UNITY – CORE
+############################
+# This .gitignore file should be placed at the root of your Unity project directory
+#
+# Get latest from https://github.com/github/gitignore/blob/main/Unity.gitignore
+#
+/[Ll]ibrary/
+/[Tt]emp/
+/[Oo]bj/
+/[Bb]uild/
+/[Bb]uilds/
+/[Ll]ogs/
+/[Uu]ser[Ss]ettings/
+/.[Ii]dea/
+/UserSettings/
+/MemoryCaptures/
+/Recordings/
+.DS_Store
+Thumbs.db
+
+# IDE
+.vs/
+.vscode/
+.idea/
+*.suo
+*.user
+*.userprefs
+*.unityproj
+*.sln
+*.csproj
+*.tmp
+*.pidb
+*.booproj
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+############################
+# SECRETS – FIREBASE / MAX / APPSFLYER
+############################
+# Firebase (mobile configs)
+**/google-services.json
+**/google-services.json.meta
+**/GoogleService-Info.plist
+**/GoogleService-Info.plist.meta
+
+# Firebase (desktop auto-generated)
+**/StreamingAssets/google-services-desktop.json
+**/StreamingAssets/google-services-desktop.json.meta
+
+# AppLovin MAX (SDK keys, ad unit IDs lưu trong asset)
+**/MaxSdk/Resources/MaxSdkSettings.asset
+**/MaxSdk/Resources/MaxSdkSettings.asset.meta
+# (Một số bản cũ)
+**/MaxSdk/Resources/AppLovinSettings.asset
+**/MaxSdk/Resources/AppLovinSettings.asset.meta
+
+# AppsFlyer (devKey/appId lưu trong asset)
+**/AppsFlyer/Resources/AppsFlyerSettings.asset
+**/AppsFlyer/Resources/AppsFlyerSettings.asset.meta
+
+# Android signing
+*.keystore
+*.keystore.meta
+*.jks
+*.jks.meta
+signing.properties
+**/gradle.properties
+
+############################
+# BUILD OUTPUTS
+############################
+*.apk
+*.aab
+*.ipa
+*.xcarchive
+*.app
+*.symbols.zip
+
+############################
+# ANDROID / GRADLE
+############################
+.gradle/
+**/.gradle/
+**/local.properties
+# Optional: nếu CI luôn chạy EDM4U để resolve AAR/JAR thì có thể bỏ qua libs đã resolve
+# Assets/Plugins/Android/*.aar
+# Assets/Plugins/Android/*.jar
+
+############################
+# iOS / COCOAPODS (nếu có thư mục Xcode trong repo)
+############################
+# Optional: thường không commit Xcode export
+Pods/
+**/Pods/
+DerivedData/
+*.xcworkspace
+*.xcuserdata/

@@ -1,0 +1,72 @@
+skeleton.png
+	size: 1782, 681
+	filter: Linear, Linear
+background
+	bounds: 2, 161, 1281, 518
+	offsets: 3, 190, 1284, 834
+button
+	bounds: 1500, 155, 102, 65
+coin/1
+	bounds: 1511, 222, 104, 105
+	offsets: 13, 15, 136, 136
+	rotate: 90
+coin/2
+	bounds: 1618, 223, 103, 105
+	offsets: 13, 15, 136, 136
+	rotate: 90
+coin/3
+	bounds: 1393, 155, 81, 105
+	offsets: 24, 15, 136, 136
+	rotate: 90
+coin/4
+	bounds: 1725, 157, 55, 105
+	offsets: 38, 15, 136, 136
+coin/5
+	bounds: 1421, 243, 24, 103
+	offsets: 54, 16, 136, 136
+coin/6
+	bounds: 1725, 50, 55, 105
+	offsets: 37, 15, 136, 136
+coin/7
+	bounds: 1285, 84, 81, 105
+	offsets: 24, 15, 136, 136
+	rotate: 90
+coin/8
+	bounds: 1618, 118, 103, 105
+	offsets: 13, 15, 136, 136
+	rotate: 90
+coin_shadow
+	bounds: 1285, 167, 106, 106
+	offsets: 1, 1, 108, 108
+eyebrowns
+	bounds: 1285, 348, 189, 56
+face
+	bounds: 1549, 494, 229, 185
+fx_bling
+	bounds: 1202, 84, 75, 75
+	offsets: 1, 1, 77, 77
+hat
+	bounds: 1285, 406, 241, 150
+leg
+	bounds: 1447, 238, 54, 87
+	offsets: 1, 0, 55, 89
+mouth
+	bounds: 1285, 275, 134, 71
+mustard
+	bounds: 1729, 355, 137, 51
+	rotate: 90
+shirt
+	bounds: 1528, 328, 199, 164
+table
+	bounds: 2, 2, 1198, 157
+	offsets: 2, 2, 1200, 159
+teeth_bottom
+	bounds: 1476, 327, 77, 33
+	offsets: 0, 0, 77, 34
+	rotate: 90
+teeth_top
+	bounds: 1729, 264, 89, 35
+	rotate: 90
+tittle_shop
+	bounds: 1285, 558, 262, 121
+	offsets: 1, 1, 264, 124

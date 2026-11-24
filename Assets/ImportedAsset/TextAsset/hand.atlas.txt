@@ -1,0 +1,10 @@
+hand.png
+size:358,193
+filter:Linear,Linear
+pma:true
+Hand
+bounds:186,2,170,189
+Hand_vfx
+bounds:2,7,184,182
+offsets:1,1,186,184
+rotate:90

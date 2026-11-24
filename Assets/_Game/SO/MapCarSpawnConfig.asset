@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3307514c1887f3741be9a00e3c5b8d66, type: 3}
+  m_Name: MapCarSpawnConfig
+  m_EditorClassIdentifier: 
+  carPacks:
+  - prefab: {fileID: 3648536865361946198, guid: 271e651011467974c8626da9ee10e6f1, type: 3}
+    count: 1
+    minSpacing: 1.5
+  - prefab: {fileID: 8566127347205735567, guid: fa7d2ec43cf3c214c9b8b7fb07359a54, type: 3}
+    count: 1
+    minSpacing: 1
+  - prefab: {fileID: 3382023401171057091, guid: 5b5f0aaa6c9445742bf75fc46eded834, type: 3}
+    count: 1
+    minSpacing: 1
+  - prefab: {fileID: 6764979195790177473, guid: acd62e5f8c2770c4c9086ad4b85dcdc9, type: 3}
+    count: 1
+    minSpacing: 1
+  allowedDirections: 01000000020000000600000005000000

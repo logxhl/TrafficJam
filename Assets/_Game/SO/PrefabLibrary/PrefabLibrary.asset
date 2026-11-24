@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c9ad9ea7fa17184285843c13eb2e7eb, type: 3}
+  m_Name: PrefabLibrary
+  m_EditorClassIdentifier: 
+  entries:
+  - key: carsmall
+    prefab: {fileID: 2329144616487096051, guid: 5b5f0aaa6c9445742bf75fc46eded834, type: 3}
+  - key: carmedium
+    prefab: {fileID: 8447781823778873752, guid: 3ceb34ac2c80edb499618ab430747538, type: 3}
+  - key: carbig
+    prefab: {fileID: 2420020057686958260, guid: 271e651011467974c8626da9ee10e6f1, type: 3}
+  - key: cone
+    prefab: {fileID: 3001834130395707648, guid: b47da3432f76da6498d672b0ce49c7b3, type: 3}
+  - key: garageleft
+    prefab: {fileID: 7467841177212474396, guid: 6a13af046ea6ab644b657c8763339c6f, type: 3}
+  - key: garageright
+    prefab: {fileID: 7975811728389323665, guid: e7deaf3936c3f21498127c21d0fe24ab, type: 3}
+  - key: garagetop
+    prefab: {fileID: 8422165238913317971, guid: d0d0d244794cda04c904782d8bb6aa81, type: 3}
+  - key: garagetopleft
+    prefab: {fileID: 8807791181460942419, guid: b9483cce4552384439671c8c1cb50d3d, type: 3}
+  - key: garagetopright
+    prefab: {fileID: 3531106385073983477, guid: 5e4b250a60185e84084bbc4afbda3c7f, type: 3}

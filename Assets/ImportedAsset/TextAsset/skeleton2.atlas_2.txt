@@ -1,0 +1,381 @@
+skeleton2.png
+	size: 2705, 1952
+	filter: Linear, Linear
+DoubleBall/ball_1
+	bounds: 852, 7, 95, 92
+DoubleBall/ball_2
+	bounds: 2583, 370, 117, 116
+DoubleBall/board
+	bounds: 2508, 1481, 195, 91
+DoubleBall/body
+	bounds: 2581, 1222, 136, 122
+	rotate: 90
+DoubleBall/flower
+	bounds: 350, 25, 85, 76
+DoubleBall/flower_2
+	bounds: 2551, 329, 39, 48
+	rotate: 90
+DoubleBall/hair
+	bounds: 1646, 215, 202, 168
+	rotate: 90
+DoubleBall/head
+	bounds: 2500, 1766, 203, 184
+	offsets: 0, 0, 203, 185
+DoubleBall/price_1
+	bounds: 1262, 2, 100, 103
+	rotate: 90
+DoubleBall/price_2
+	bounds: 1367, 2, 100, 103
+	rotate: 90
+DoubleBall/price_token
+	bounds: 2518, 105, 100, 101
+DoubleBall/tittle
+	bounds: 449, 363, 487, 103
+	offsets: 2, 2, 491, 107
+	rotate: 90
+DoubleBall/tittle_2
+	bounds: 554, 363, 487, 103
+	offsets: 2, 2, 491, 107
+	rotate: 90
+DoubleBall/triple_board
+	bounds: 2174, 912, 195, 91
+	rotate: 90
+DoubleEgg/price_1
+	bounds: 2069, 13, 95, 115
+	rotate: 90
+DoubleEgg/price_token
+	bounds: 659, 5, 94, 95
+	rotate: 90
+TripleEgg/price_token
+	bounds: 659, 5, 94, 95
+	rotate: 90
+DoubleEgg/tittle
+	bounds: 659, 386, 488, 103
+	offsets: 2, 2, 492, 107
+	rotate: 90
+DoubleGift/illus_1_mounth
+	bounds: 2148, 1641, 53, 46
+	offsets: 37, 45, 91, 91
+DoubleGift/price_1
+	bounds: 1593, 2, 106, 116
+	rotate: 90
+DoubleGift/tittle
+	bounds: 764, 386, 488, 103
+	offsets: 2, 2, 492, 107
+	rotate: 90
+DoubleLetter/price_1
+	bounds: 1816, 11, 133, 99
+DoubleLetter/price_tokenV
+	bounds: 756, 5, 94, 94
+TripleLetter/price_tokenV
+	bounds: 756, 5, 94, 94
+DoubleLetter/tittle
+	bounds: 869, 386, 488, 103
+	offsets: 2, 2, 492, 107
+	rotate: 90
+FantasticOffer/Fantastic_offer_1_shufle
+	bounds: 2446, 1361, 135, 118
+FantasticOffer/Fantastic_offer_1_sort
+	bounds: 2568, 1084, 136, 119
+	rotate: 90
+FantasticOffer/Fantastic_offer_1_vipslot
+	bounds: 2392, 213, 136, 114
+FantasticOffer/Fantastic_offer_2_shufle
+	bounds: 2174, 768, 142, 118
+	rotate: 90
+FantasticOffer/Fantastic_offer_2_sort
+	bounds: 2436, 1240, 143, 119
+FantasticOffer/Fantastic_offer_2_vipslot
+	bounds: 2191, 621, 145, 114
+	rotate: 90
+FantasticOffer/illus_1
+	bounds: 2, 103, 433, 284
+	offsets: 2, 1, 435, 286
+FantasticOffer/illus_1.1
+	bounds: 2203, 1641, 46, 46
+FantasticOffer/illus_1.2
+	bounds: 1189, 49, 166, 71
+	rotate: 90
+FantasticOffer/illus_1.3
+	bounds: 2592, 789, 167, 63
+	rotate: 90
+FantasticOffer/illus_3
+	bounds: 1472, 2, 119, 108
+	offsets: 1, 1, 120, 110
+FantasticOffer/illus_4
+	bounds: 1454, 112, 115, 109
+	offsets: 1, 1, 117, 111
+FantasticOffer/ilus_2
+	bounds: 2053, 620, 146, 136
+	offsets: 1, 1, 147, 137
+	rotate: 90
+FantasticOffer/price_coin
+	bounds: 2583, 958, 124, 106
+	rotate: 90
+FillUpTheGasTank/price_coin
+	bounds: 2583, 958, 124, 106
+	rotate: 90
+StarterPack/price_coin
+	bounds: 2583, 958, 124, 106
+	rotate: 90
+TripleGift/price_coin
+	bounds: 2583, 958, 124, 106
+	rotate: 90
+VipForLife/price_coin
+	bounds: 2583, 958, 124, 106
+	rotate: 90
+FantasticOffer/tittle
+	bounds: 867, 1400, 488, 103
+	offsets: 2, 2, 492, 107
+FillUpTheGasTank/illus_1
+	bounds: 1454, 223, 190, 194
+	offsets: 1, 1, 193, 197
+FillUpTheGasTank/illus_2
+	bounds: 437, 102, 236, 259
+	offsets: 1, 1, 238, 261
+FillUpTheGasTank/illus_3
+	bounds: 2322, 1519, 168, 184
+	offsets: 2, 1, 172, 186
+	rotate: 90
+FillUpTheGasTank/price_gas
+	bounds: 554, 5, 103, 95
+FillUpTheGasTank/tittle
+	bounds: 867, 1295, 488, 103
+	offsets: 2, 2, 492, 107
+HalfEmpty/tittle
+	bounds: 867, 1190, 488, 103
+	offsets: 2, 2, 492, 107
+HalfFull/tittle
+	bounds: 974, 428, 488, 103
+	offsets: 2, 2, 492, 107
+	rotate: 90
+HalloweenDeal/illus_1
+	bounds: 1814, 451, 249, 166
+	offsets: 2, 1, 252, 169
+HalloweenDeal/illus_2
+	bounds: 1847, 1105, 296, 198
+	offsets: 2, 1, 300, 200
+HalloweenDeal/price_candy
+	bounds: 2615, 662, 125, 88
+	rotate: 90
+HalloweenDeal/tittle
+	bounds: 1079, 428, 488, 103
+	offsets: 2, 2, 492, 107
+	rotate: 90
+MakeItRain/coin
+	bounds: 1711, 2, 76, 70
+MakeItRain/coin_stroke
+	bounds: 2307, 624, 151, 144
+	offsets: 5, 5, 161, 154
+MakeItRain/fx_glow
+	bounds: 2583, 1360, 120, 119
+	offsets: 15, 14, 149, 149
+MakeItRain/illus_1
+	bounds: 2, 1229, 626, 375
+	offsets: 4, 5, 635, 385
+StarterPack/illus_1
+	bounds: 2, 1229, 626, 375
+	offsets: 4, 5, 635, 385
+MakeItRain/illus_glow
+	bounds: 2, 852, 626, 375
+	offsets: 4, 5, 635, 385
+MakeItRain/price_1
+	bounds: 2065, 449, 165, 169
+	offsets: 6, 5, 176, 180
+MakeItRain/price_2
+	bounds: 2053, 768, 335, 119
+	offsets: 9, 1, 346, 130
+	rotate: 90
+MakeItRain/rain/1
+	bounds: 1816, 259, 190, 190
+MakeItRain/rain/2
+	bounds: 2508, 1574, 190, 190
+MakeItRain/rain/3
+	bounds: 2232, 429, 178, 190
+	offsets: 3, 0, 190, 190
+MakeItRain/rain/4
+	bounds: 1816, 112, 145, 190
+	offsets: 20, 0, 190, 190
+	rotate: 90
+MakeItRain/rain/5
+	bounds: 2254, 1414, 103, 190
+	offsets: 42, 0, 190, 190
+	rotate: 90
+MakeItRain/rain/6
+	bounds: 2008, 110, 145, 190
+	offsets: 19, 0, 190, 190
+	rotate: 90
+MakeItRain/rain/7
+	bounds: 2200, 249, 178, 190
+	offsets: 3, 0, 190, 190
+	rotate: 90
+MakeItRain/rain/8
+	bounds: 2008, 257, 190, 190
+MakeItRain/tittle
+	bounds: 1184, 428, 488, 103
+	offsets: 2, 2, 492, 107
+	rotate: 90
+MoreIsBetter/illus_2_glow
+	bounds: 630, 876, 283, 294
+	offsets: 5, 5, 293, 304
+NoAdTurboHour/illus_1_hand
+	bounds: 1711, 74, 139, 103
+	offsets: 2, 1, 143, 106
+	rotate: 90
+NoAdTurboHour/price_1
+	bounds: 2437, 789, 153, 159
+	offsets: 2, 1, 156, 162
+NoAdTurboHour/price_2
+	bounds: 2200, 76, 171, 178
+	offsets: 1, 1, 174, 180
+	rotate: 90
+NoAdTurboHour/price_3
+	bounds: 2460, 629, 153, 158
+	offsets: 1, 1, 155, 161
+NoAdTurboHour/text
+	bounds: 1409, 1434, 428, 88
+NoAdTurboHour/tittle
+	bounds: 1357, 1329, 488, 103
+	offsets: 2, 2, 492, 107
+ParkingLot/price_lot
+	bounds: 1262, 104, 167, 116
+	offsets: 3, 4, 173, 125
+ParkingLot/text
+	bounds: 2, 2, 346, 99
+ParkingLot/tittle
+	bounds: 1357, 1224, 488, 103
+	offsets: 2, 2, 492, 107
+StarterPack/Starter_pack_shufle
+	bounds: 2380, 93, 136, 118
+StarterPack/Starter_pack_sort
+	bounds: 2412, 329, 137, 119
+StarterPack/Starter_pack_vipslot
+	bounds: 2583, 488, 139, 114
+	rotate: 90
+StarterPack/illus_2
+	bounds: 1814, 862, 237, 241
+StarterPack/illus_3
+	bounds: 630, 1172, 432, 235
+	offsets: 1, 2, 435, 286
+	rotate: 90
+StarterPack/illus_4
+	bounds: 1814, 619, 237, 241
+StarterPack/price_1
+	bounds: 2530, 208, 115, 119
+StarterPack/tittle
+	bounds: 1289, 419, 487, 103
+	offsets: 2, 2, 491, 107
+StarterPack/tittle_2
+	bounds: 1709, 525, 487, 103
+	offsets: 2, 2, 491, 107
+	rotate: 90
+StarterPack/tittle_3
+	bounds: 1833, 1536, 487, 103
+	offsets: 2, 2, 491, 107
+StarterPack/white
+	bounds: 949, 2, 52, 48
+	rotate: 90
+TripleEgg/egg_1
+	bounds: 2267, 935, 157, 177
+	offsets: 3, 3, 162, 183
+TripleEgg/egg_2
+	bounds: 2261, 1242, 173, 170
+	offsets: 3, 3, 178, 176
+TripleEgg/price_1
+	bounds: 437, 5, 95, 115
+	rotate: 90
+TripleEgg/rabit
+	bounds: 915, 918, 321, 270
+	offsets: 0, 0, 324, 277
+TripleEgg/rabit_ear1
+	bounds: 2380, 38, 128, 53
+TripleEgg/rabit_ear2
+	bounds: 2186, 6, 121, 68
+TripleEgg/tittle
+	bounds: 1357, 1119, 488, 103
+	offsets: 2, 2, 492, 107
+TripleGift/illus_1
+	bounds: 2, 389, 445, 461
+TripleGift/illus_1_glow
+	bounds: 946, 1505, 445, 461
+	rotate: 90
+TripleGift/illus_1_mounth
+	bounds: 2613, 12, 90, 91
+	offsets: 1, 0, 91, 91
+TripleGift/illus_2
+	bounds: 2412, 450, 169, 172
+	offsets: 2, 2, 173, 176
+TripleGift/price_1
+	bounds: 1951, 2, 106, 116
+	rotate: 90
+TripleGift/price_token
+	bounds: 2518, 11, 92, 93
+	rotate: 90
+TripleGift/tittle
+	bounds: 1238, 1014, 488, 103
+	offsets: 2, 2, 492, 107
+TripleLetter/angel
+	bounds: 1833, 1641, 313, 309
+	offsets: 1, 0, 314, 309
+TripleLetter/gun
+	bounds: 2427, 1084, 139, 154
+TripleLetter/gun_stroke
+	bounds: 1242, 222, 195, 210
+	offsets: 2, 2, 199, 213
+	rotate: 90
+TripleLetter/illus_letter_1
+	bounds: 2294, 770, 141, 163
+	offsets: 2, 2, 145, 168
+TripleLetter/illus_letter_2
+	bounds: 2261, 1114, 164, 126
+	offsets: 2, 2, 169, 130
+TripleLetter/illus_letter_3
+	bounds: 2426, 950, 155, 132
+	offsets: 2, 2, 159, 135
+TripleLetter/price_1
+	bounds: 1571, 114, 133, 99
+TripleLetter/tittle
+	bounds: 1289, 524, 488, 103
+	offsets: 2, 2, 492, 107
+	rotate: 90
+UltimateParking/illus_1
+	bounds: 2148, 1689, 350, 261
+	offsets: 4, 5, 359, 271
+UltimateParking/illus_2
+	bounds: 971, 56, 216, 159
+	offsets: 2, 2, 221, 164
+UltimateParking/text
+	bounds: 1847, 1305, 403, 103
+UltimateParking/tittle
+	bounds: 1394, 524, 488, 103
+	offsets: 2, 2, 492, 107
+	rotate: 90
+ValuablePack/illus
+	bounds: 675, 101, 283, 294
+	offsets: 5, 5, 293, 304
+	rotate: 90
+ValuablePack/price_2
+	bounds: 1847, 1410, 405, 124
+	offsets: 10, 2, 424, 133
+ValuablePack/tittle
+	bounds: 1499, 524, 488, 103
+	offsets: 2, 2, 492, 107
+	rotate: 90
+VipForLife/illus_3
+	bounds: 974, 217, 209, 266
+	rotate: 90
+VipForLife/price_1
+	bounds: 2145, 1109, 194, 114
+	rotate: 90
+VipForLife/tittle
+	bounds: 1604, 524, 488, 103
+	offsets: 2, 2, 492, 107
+	rotate: 90
+fx_bling
+	bounds: 867, 1529, 75, 75
+	offsets: 1, 1, 77, 77
+light_spin
+	bounds: 1409, 1524, 422, 426
+	offsets: 16, 14, 454, 452
+popup
+	bounds: 2, 1606, 942, 344

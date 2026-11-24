@@ -1,0 +1,39 @@
+skeleton.png
+	size: 678, 678
+	filter: Linear, Linear
+board
+	bounds: 408, 91, 146, 145
+	offsets: 3, 3, 152, 150
+	rotate: 90
+coin
+	bounds: 2, 312, 430, 364
+	offsets: 1, 1, 850, 487
+effect_star
+	bounds: 391, 23, 66, 66
+	offsets: 0, 1, 66, 68
+icon_body_2
+	bounds: 2, 33, 249, 277
+	offsets: 0, 0, 249, 283
+icon_coin
+	bounds: 555, 100, 137, 101
+	rotate: 90
+icon_glow
+	bounds: 434, 239, 220, 185
+	offsets: 4, 3, 228, 191
+icon_mouth_2
+	bounds: 253, 6, 78, 49
+	offsets: 1, 0, 79, 49
+illus
+	bounds: 434, 426, 242, 250
+	offsets: 4, 5, 250, 259
+slash
+	bounds: 555, 52, 46, 114
+	offsets: 3, 2, 52, 118
+	rotate: 90
+tag_sale
+	bounds: 253, 164, 146, 153
+	offsets: 4, 5, 154, 163
+	rotate: 90
+text
+	bounds: 253, 57, 136, 105
+	offsets: 2, 3, 140, 110

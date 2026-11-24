@@ -1,0 +1,11 @@
+skeleton2.png
+	size: 472, 193
+	filter: Linear, Linear
+Hand
+	bounds: 186, 2, 170, 189
+Hand_vfx
+	bounds: 2, 7, 184, 182
+	offsets: 1, 1, 186, 184
+	rotate: 90
+arrow
+	bounds: 358, 43, 112, 148

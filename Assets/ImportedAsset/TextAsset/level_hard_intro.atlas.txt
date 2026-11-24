@@ -1,0 +1,21 @@
+level_hard_intro.png
+	size: 1395, 1395
+	filter: Linear, Linear
+extreme_board
+	bounds: 2, 1020, 1109, 373
+extreme_sign
+	bounds: 2, 45, 599, 543
+	rotate: 90
+fx_glow
+	bounds: 547, 146, 498, 495
+	offsets: 21, 22, 525, 540
+	rotate: 90
+fx_up
+	bounds: 1113, 1189, 204, 218
+	offsets: 8, 10, 219, 237
+	rotate: 90
+hard_board
+	bounds: 2, 646, 1080, 372
+hard_sign
+	bounds: 1044, 238, 406, 349
+	rotate: 90

@@ -1,0 +1,36 @@
+skeleton2.png
+	size: 441, 1171
+	filter: Linear, Linear
+LEVEL COMPLETE
+	bounds: 268, 444, 725, 154
+	rotate: 90
+body
+	bounds: 2, 2, 140, 169
+	offsets: 1, 0, 142, 169
+	rotate: 90
+car
+	bounds: 2, 617, 552, 264
+	offsets: 1, 0, 554, 264
+	rotate: 90
+face
+	bounds: 2, 144, 200, 190
+hair_b
+	bounds: 2, 336, 258, 279
+	offsets: 1, 0, 260, 279
+hair_f
+	bounds: 258, 57, 229, 111
+	rotate: 90
+hat
+	bounds: 262, 288, 154, 174
+	rotate: 90
+hat_flower
+	bounds: 173, 61, 83, 81
+mouth
+	bounds: 204, 248, 52, 86
+	offsets: 0, 1, 52, 87
+skirt
+	bounds: 371, 114, 172, 68
+	rotate: 90
+smoke_1
+	bounds: 371, 53, 59, 59
+	offsets: 3, 10, 63, 79

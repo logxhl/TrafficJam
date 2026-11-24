@@ -1,0 +1,38 @@
+skeleton3.png
+	size: 692, 1374
+	filter: Linear, Linear
+ParkingLot/price_lot
+	bounds: 527, 91, 167, 116
+	offsets: 3, 4, 173, 125
+	rotate: 90
+ParkingLot/text
+	bounds: 426, 130, 346, 99
+	rotate: 90
+ParkingLot/tittle_2
+	bounds: 348, 830, 542, 116
+	offsets: 2, 1, 546, 119
+	rotate: 90
+StarterPack/price_coin
+	bounds: 584, 843, 124, 106
+	rotate: 90
+UltimateParking/illus_1
+	bounds: 348, 478, 350, 261
+	offsets: 4, 5, 359, 271
+	rotate: 90
+UltimateParking/illus_2
+	bounds: 527, 260, 216, 159
+	offsets: 2, 2, 221, 164
+	rotate: 90
+UltimateParking/text
+	bounds: 584, 969, 403, 103
+	rotate: 90
+UltimateParking/tittle_2
+	bounds: 466, 830, 542, 116
+	offsets: 2, 1, 546, 119
+	rotate: 90
+light_spin
+	bounds: 2, 2, 422, 426
+	offsets: 16, 14, 454, 452
+popup_2
+	bounds: 2, 430, 942, 344
+	rotate: 90

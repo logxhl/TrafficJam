@@ -1,0 +1,33 @@
+skeleton.png
+	size: 666, 666
+	filter: Linear, Linear
+body
+	bounds: 2, 140, 231, 326
+coin_1
+	bounds: 449, 404, 64, 62
+coin_2
+	bounds: 2, 8, 105, 130
+coin_3
+	bounds: 543, 327, 55, 56
+	rotate: 90
+coin_back
+	bounds: 381, 2, 380, 160
+	rotate: 90
+coin_front
+	bounds: 2, 468, 529, 196
+	offsets: 0, 4, 537, 200
+effect_star
+	bounds: 381, 400, 66, 66
+	offsets: 0, 1, 66, 68
+flag_1
+	bounds: 109, 10, 97, 128
+flag_2
+	bounds: 533, 384, 114, 130
+	rotate: 90
+mounth
+	bounds: 533, 500, 164, 102
+	rotate: 90
+number
+	bounds: 235, 7, 459, 144
+	offsets: 4, 0, 465, 144
+	rotate: 90
