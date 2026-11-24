@@ -12,62 +12,59 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 150c3d5580fe59140a99aebd5f495b4c, type: 3}
   m_Name: Level4
   m_EditorClassIdentifier: 
-  levelName: Level 4 - Interlocking Chevron
+  levelName: Level 4
   targetGuestsLeft: 0
   parkingParentName: _PARKING
   conesParentName: _CONES
   garagesParentName: _GARAGES
   cars:
   - key: carsmall
-    position: {x: 0.25, y: -5.33, z: 0}
+    position: {x: 1.25, y: -4.45, z: 0}
     facing: 2
-    ObjectColor_car: 3
-  - key: carmedium
-    position: {x: 1.75, y: -4.07, z: 0}
-    facing: 2
-    ObjectColor_car: 7
-  - key: carbig
-    position: {x: 3.5, y: -2.6, z: 0}
-    facing: 2
+    ObjectColor_car: 0
+  - key: carsmall
+    position: {x: -1.25, y: -4.45, z: 0}
+    facing: 1
     ObjectColor_car: 1
   - key: carsmall
-    position: {x: 2.25, y: -5.75, z: 0}
+    position: {x: 2.5, y: -3.4, z: 0}
     facing: 2
-    ObjectColor_car: 9
-  - key: carmedium
-    position: {x: 3.75, y: -4.49, z: 0}
-    facing: 2
+    ObjectColor_car: 2
+  - key: carsmall
+    position: {x: -2.5, y: -3.4, z: 0}
+    facing: 1
     ObjectColor_car: 3
   - key: carsmall
-    position: {x: 5.25, y: -3.23, z: 0}
+    position: {x: 3.75, y: -2.35, z: 0}
     facing: 2
+    ObjectColor_car: 4
+  - key: carsmall
+    position: {x: -3.75, y: -2.35, z: 0}
+    facing: 1
+    ObjectColor_car: 5
+  - key: carmedium
+    position: {x: 1.25, y: -2.35, z: 0}
+    facing: 2
+    ObjectColor_car: 6
+  - key: carmedium
+    position: {x: -1.25, y: -2.35, z: 0}
+    facing: 1
     ObjectColor_car: 7
-  - key: carsmall
-    position: {x: -0.25, y: -5.33, z: 0}
+  - key: carmedium
+    position: {x: 2.62, y: -1.2, z: 0}
+    facing: 2
+    ObjectColor_car: 8
+  - key: carmedium
+    position: {x: -2.62, y: -1.2, z: 0}
     facing: 1
     ObjectColor_car: 9
   - key: carmedium
-    position: {x: -1.75, y: -4.07, z: 0}
-    facing: 1
-    ObjectColor_car: 3
-  - key: carsmall
-    position: {x: -3.38, y: -2.7, z: 0}
+    position: {x: 4, y: -0.04, z: 0}
+    facing: 2
+    ObjectColor_car: 0
+  - key: carmedium
+    position: {x: -4, y: -0.04, z: 0}
     facing: 1
     ObjectColor_car: 1
-  - key: carbig
-    position: {x: -2.38, y: -5.64, z: 0}
-    facing: 1
-    ObjectColor_car: 7
-  - key: carsmall
-    position: {x: -4, y: -4.28, z: 0}
-    facing: 1
-    ObjectColor_car: 9
-  - key: carmedium
-    position: {x: -5.5, y: -3.02, z: 0}
-    facing: 1
-    ObjectColor_car: 3
   cones: []
-  garages:
-  - key: garagetopright
-    position: {x: 2.2, y: -5.5, z: 0}
-
+  garages: []
