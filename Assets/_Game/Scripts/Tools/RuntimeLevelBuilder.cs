@@ -20,7 +20,8 @@ public class RuntimeLevelBuilder : MonoBehaviour
 
     public IEnumerator HandleStart()
     {
-        levelData_Current = level[DataManager.Ins.Level];
+        int levelIndex = DataManager.Ins?.Level ?? 0;
+        levelData_Current = level[levelIndex];
         if (autoBuildOnStart) BuildNow();
         yield return null;
     }
@@ -37,7 +38,7 @@ public class RuntimeLevelBuilder : MonoBehaviour
             var prefab = library.Get(c.key);
             if (!prefab) { Debug.LogWarning("Missing key: " + c.key); continue; }
             var go = Instantiate(prefab, parkingParent);
-            go.transform.SetPositionAndRotation(c.position, Quaternion.Euler(0,0,0));
+            go.transform.SetPositionAndRotation(c.position, Quaternion.Euler(0, 0, 0));
 
             var cc = go.GetComponent<CarControl>();
             if (cc != null)
@@ -77,7 +78,7 @@ public class RuntimeLevelBuilder : MonoBehaviour
             if (!pf) { Debug.LogWarning("Missing key: " + g.key); continue; }
             var go = Instantiate(pf, garagesParent);
             go.transform.position = g.position;
-            
+
             var garageController = go.GetComponent<GarageController>();
             if (garageController != null)
             {
