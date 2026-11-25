@@ -3,6 +3,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+#if UNITY_EDITOR
+using DG.Tweening;
+using UnityEditor;
+#endif
 
 public class RuntimeLevelBuilder : MonoBehaviour
 {
@@ -18,6 +22,51 @@ public class RuntimeLevelBuilder : MonoBehaviour
 
     public bool autoBuildOnStart = true;
 
+#if UNITY_EDITOR
+    private readonly Dictionary<LevelData.CarPlacement, CarControl> spawnedCars = new();
+    private LevelData builtLevel;
+
+    [ContextMenu("Save Car Positions to LevelData")]
+    public void SaveCarPositionsToLevelData()
+    {
+        if (!Application.isPlaying || builtLevel == null || builtLevel != levelData_Current ||
+            parkingParent == null || !AssetDatabase.Contains(builtLevel))
+        {
+            Debug.LogWarning("[RuntimeLevelBuilder] Hãy chạy màn có LevelData trước khi lưu vị trí xe.", this);
+            return;
+        }
+
+        int changed = 0;
+        int skipped = 0;
+        foreach (var placement in builtLevel.cars)
+        {
+            if (!spawnedCars.TryGetValue(placement, out var car) || car == null ||
+                !car.gameObject.activeInHierarchy || car.transform.parent != parkingParent ||
+                car.HasLeftLot || car.isMoving || car.isParking || car.isParked ||
+                car.parkingSpace_current != null || DOTween.IsTweening(car.transform))
+            {
+                skipped++;
+                continue;
+            }
+
+            var position = car.transform.position;
+            if (placement.position.Equals(position)) continue;
+
+            if (changed == 0) Undo.RegisterCompleteObjectUndo(builtLevel, "Save Car Positions");
+            placement.position = position;
+            changed++;
+        }
+
+        if (changed > 0)
+        {
+            EditorUtility.SetDirty(builtLevel);
+            AssetDatabase.SaveAssetIfDirty(builtLevel);
+        }
+
+        Debug.Log($"[RuntimeLevelBuilder] {builtLevel.name}: đã lưu vị trí {changed} xe, bỏ qua {skipped} xe.", builtLevel);
+    }
+#endif
+
     public IEnumerator HandleStart()
     {
         int levelIndex = DataManager.Ins?.Level ?? 0;
@@ -30,6 +79,10 @@ public class RuntimeLevelBuilder : MonoBehaviour
     public void BuildNow()
     {
         if (level == null || library == null) { Debug.LogError("Missing LevelData/PrefabLibrary"); return; }
+#if UNITY_EDITOR
+        spawnedCars.Clear();
+        builtLevel = levelData_Current;
+#endif
         Clear(parkingParent); Clear(conesParent); Clear(garagesParent);
         GameController.Instance.parkingLotManager.listCarControl_CarInParkingLot.Clear();
 
@@ -43,6 +96,9 @@ public class RuntimeLevelBuilder : MonoBehaviour
             var cc = go.GetComponent<CarControl>();
             if (cc != null)
             {
+#if UNITY_EDITOR
+                spawnedCars[c] = cc;
+#endif
                 if (cc.carInfo != null)
                 {
                     cc.carInfo.directions_Car = c.facing;

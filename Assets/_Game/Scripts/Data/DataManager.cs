@@ -103,10 +103,11 @@ public class DataManager : MonoBehaviour {
         gameSave.level = Mathf.Max(0, level);
         SaveGame();
     }
-    public void NextLevel()
+    public void NextLevel(int levelCount)
     {
-        gameSave.level += 1;
-        if(gameSave.level > 1) gameSave.level = 0;
+        if (levelCount <= 0) return;
+
+        gameSave.level = Level < levelCount - 1 ? Level + 1 : 0;
         SaveGame();
     }
 

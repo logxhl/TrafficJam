@@ -98,7 +98,7 @@ public class GameController : MonoBehaviour
     public void NextLevel()
     {
         Time.timeScale = 1f;
-        DataManager.Ins.NextLevel();
+        DataManager.Ins.NextLevel(runtimeLevelBuilder.level.Count);
         SceneManager.LoadScene(
             SceneManager.GetActiveScene().buildIndex);
     }

@@ -1,4 +1,4 @@
-﻿%YAML 1.1
+%YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
 --- !u!114 &11400000
 MonoBehaviour:
@@ -18,45 +18,33 @@ MonoBehaviour:
   conesParentName: _CONES
   garagesParentName: _GARAGES
   cars:
-  - key: carsmall
-    position: {x: 1.25, y: -4.45, z: 0}
+  - key: carmedium
+    position: {x: 0.805, y: -1.857, z: 0}
     facing: 2
-    ObjectColor_car: 0
-  - key: carsmall
-    position: {x: -1.25, y: -4.45, z: 0}
-    facing: 1
     ObjectColor_car: 1
-  - key: carsmall
-    position: {x: 2.5, y: -3.4, z: 0}
-    facing: 2
-    ObjectColor_car: 2
-  - key: carsmall
-    position: {x: -2.5, y: -3.4, z: 0}
+  - key: carmedium
+    position: {x: -1.59, y: -3.247, z: 0}
     facing: 1
     ObjectColor_car: 3
   - key: carsmall
-    position: {x: 3.75, y: -2.35, z: 0}
+    position: {x: 1.653, y: -3.247, z: 0}
     facing: 2
-    ObjectColor_car: 4
-  - key: carsmall
-    position: {x: -3.75, y: -2.35, z: 0}
-    facing: 1
-    ObjectColor_car: 5
-  - key: carmedium
-    position: {x: 1.25, y: -2.35, z: 0}
-    facing: 2
-    ObjectColor_car: 6
-  - key: carmedium
-    position: {x: -1.25, y: -2.35, z: 0}
-    facing: 1
     ObjectColor_car: 7
-  - key: carmedium
-    position: {x: 2.62, y: -1.2, z: 0}
-    facing: 2
-    ObjectColor_car: 8
-  - key: carmedium
-    position: {x: -2.62, y: -1.2, z: 0}
-    facing: 1
-    ObjectColor_car: 9
+  - key: carsmall
+    position: {x: -1.412, y: -4.841, z: 0}
+    facing: 7
+    ObjectColor_car: 1
+  - key: carbig
+    position: {x: 0.851, y: -4.841, z: 0}
+    facing: 7
+    ObjectColor_car: 3
+  - key: carsmall
+    position: {x: 0.15, y: -3.247, z: 0}
+    facing: 6
+    ObjectColor_car: 7
+  - key: carsmall
+    position: {x: -0.935, y: -1.857, z: 0}
+    facing: 5
+    ObjectColor_car: 1
   cones: []
   garages: []

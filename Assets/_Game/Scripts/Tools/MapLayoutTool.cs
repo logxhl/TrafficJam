@@ -36,6 +36,21 @@ public class MapLayoutTool : EditorWindow
 
     void OnGUI()
     {
+        if (EditorApplication.isPlaying)
+        {
+            var controller = GameController.Instance;
+            var builder = controller != null ? controller.runtimeLevelBuilder : null;
+            using (new EditorGUI.DisabledScope(true))
+                EditorGUILayout.ObjectField("LevelData", builder != null ? builder.levelData_Current : null,
+                    typeof(LevelData), false);
+
+            EditorGUILayout.HelpBox("Chỉnh vị trí xe trong Scene rồi lưu vào LevelData của màn đang chạy.", MessageType.Info);
+            using (new EditorGUI.DisabledScope(builder == null || builder.levelData_Current == null))
+                if (GUILayout.Button("Save Car Positions to LevelData"))
+                    builder.SaveCarPositionsToLevelData();
+            return;
+        }
+
         level   = (LevelData)EditorGUILayout.ObjectField("LevelData", level, typeof(LevelData), false);
         library = (PrefabLibrary)EditorGUILayout.ObjectField("PrefabLibrary", library, typeof(PrefabLibrary), false);
 
@@ -109,7 +124,7 @@ public class MapLayoutTool : EditorWindow
 
     void OnSceneGUI(SceneView sv)
     {
-        if (library == null || keys.Length == 0) return;
+        if (EditorApplication.isPlaying || library == null || keys.Length == 0) return;
         var e = Event.current; if (e == null) return;
 
         // hotkeys
