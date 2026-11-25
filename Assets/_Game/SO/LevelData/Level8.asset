@@ -39,7 +39,7 @@ MonoBehaviour:
     facing: 2
     ObjectColor_car: 1
   - key: carmedium
-    position: {x: -2.338, y: -4.776, z: 0}
+    position: {x: -2.73, y: -4.26, z: 0}
     facing: 6
     ObjectColor_car: 1
   - key: carsmall

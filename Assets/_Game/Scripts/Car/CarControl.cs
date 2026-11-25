@@ -57,11 +57,18 @@ public class CarControl : MonoBehaviour
     public static void RaiseCarDepartedFull(ObjectColor color, int boarded)
         => OnCarDepartedFull?.Invoke(color, boarded);
 
+    private void Awake()
+    {
+        v2_EntrancePos = new Vector2(-1000f, -1000f);
+        isParking = false;
+    }
+
     public void HandleStart()
     {
         _root = transform;
         _selfCols = new HashSet<Collider2D>(_root.GetComponentsInChildren<Collider2D>(true));
         v2_EntrancePos = new Vector2(-1000f, -1000f); // khởi tạo xa khỏi map
+        isParking = false;
         SetColor(carInfo.objectColor_car);
         v2_base = transform.position;
     }
@@ -101,7 +108,9 @@ public class CarControl : MonoBehaviour
             parkingSpace_current.isOccupied = false;
         }
         
-        if(Vector2.Distance(transform.position, v2_EntrancePos) < 0.3f){
+        if (((isFulled && isParked) || (isMoving && !isParked && parkingSpace_current != null)) &&
+            Vector2.Distance(transform.position, v2_EntrancePos) < 0.3f)
+        {
             if (isParked)
             {
                 carInfo.directions_Car = Directions.Right;
@@ -494,6 +503,7 @@ public class CarControl : MonoBehaviour
                 parkingSpace_current.isOccupied = false;
                 parkingSpace_current = null;
             }
+            v2_EntrancePos = new Vector2(-1000f, -1000f);
             // Hủy tween cũ nếu đang có
             DOTween.Kill(transform);
 
@@ -535,6 +545,12 @@ public class CarControl : MonoBehaviour
     // Di chuyển tới chỗ đỗ
     private void Park()
     {
+        if (parkingSpace_current == null || parkingSpace_current.trans_anchor == null)
+        {
+            isParking = false;
+            return;
+        }
+
         if (Vector2.Distance(transform.position, parkingSpace_current.trans_anchor.position) < 0.1f)
         {
             // Dừng tại chỗ đỗ
