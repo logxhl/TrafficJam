@@ -123,3 +123,7 @@ Do not invent download links, pretend files were changed when they were not, or 
 - For highly invasive or irreversible actions (scene-wide rewrites, package upgrades, mass asset edits, delete/reset, changing publishing/signing/ads configurations), request explicit authorization before executing.
 - If the task can be solved with a single C# file, avoid touching scenes or other scripts unless references require it. Conversely, if a coherent fix needs several scripts, do not knowingly leave the project in a half-integrated state.
 - Follow existing source behavior over this document if the code has evolved; call out discrepancies and ask only when a decision is truly required.
+
+## 12. Level generation
+
+- For new layouts or changes to existing level layouts, read [LEVEL_GENERATION.md](LEVEL_GENERATION.md) for the TrafficJam workflow, reference layouts, cone rules, and validation steps.
