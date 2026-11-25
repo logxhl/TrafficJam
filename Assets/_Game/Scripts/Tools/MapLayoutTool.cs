@@ -44,10 +44,12 @@ public class MapLayoutTool : EditorWindow
                 EditorGUILayout.ObjectField("LevelData", builder != null ? builder.levelData_Current : null,
                     typeof(LevelData), false);
 
-            EditorGUILayout.HelpBox("Chỉnh vị trí xe trong Scene rồi lưu vào LevelData của màn đang chạy.", MessageType.Info);
+            EditorGUILayout.HelpBox("Lưu vị trí xe, cone và garage vào LevelData của màn đang chạy. " +
+                "Hướng và màu xe lấy từ CarControl. Màu và số khách ban đầu của cone lấy từ ConeBlocker.",
+                MessageType.Info);
             using (new EditorGUI.DisabledScope(builder == null || builder.levelData_Current == null))
-                if (GUILayout.Button("Save Car Positions to LevelData"))
-                    builder.SaveCarPositionsToLevelData();
+                if (GUILayout.Button("Save Layout to LevelData"))
+                    builder.SaveLayoutToLevelData();
             return;
         }
 

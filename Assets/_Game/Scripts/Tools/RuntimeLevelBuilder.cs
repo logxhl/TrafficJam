@@ -24,46 +24,108 @@ public class RuntimeLevelBuilder : MonoBehaviour
 
 #if UNITY_EDITOR
     private readonly Dictionary<LevelData.CarPlacement, CarControl> spawnedCars = new();
+    private readonly Dictionary<LevelData.ConePlacement, ConeBlocker> spawnedCones = new();
+    private readonly Dictionary<LevelData.GaragePlacement, Transform> spawnedGarages = new();
     private LevelData builtLevel;
 
-    [ContextMenu("Save Car Positions to LevelData")]
-    public void SaveCarPositionsToLevelData()
+    public void SaveCarPositionsToLevelData() => SaveLayoutToLevelData();
+
+    [ContextMenu("Save Layout to LevelData")]
+    public void SaveLayoutToLevelData()
     {
         if (!Application.isPlaying || builtLevel == null || builtLevel != levelData_Current ||
-            parkingParent == null || !AssetDatabase.Contains(builtLevel))
+            !AssetDatabase.Contains(builtLevel))
         {
-            Debug.LogWarning("[RuntimeLevelBuilder] Hãy chạy màn có LevelData trước khi lưu vị trí xe.", this);
+            Debug.LogWarning("[RuntimeLevelBuilder] Hãy chạy màn có LevelData trước khi lưu bố cục.", this);
             return;
         }
 
-        int changed = 0;
-        int skipped = 0;
+        bool hasChanges = false;
+        void RegisterUndo()
+        {
+            if (hasChanges) return;
+            Undo.RegisterCompleteObjectUndo(builtLevel, "Save Level Layout");
+            hasChanges = true;
+        }
+
+        int carsChanged = 0;
+        int carsSkipped = 0;
         foreach (var placement in builtLevel.cars)
         {
-            if (!spawnedCars.TryGetValue(placement, out var car) || car == null ||
+            if (parkingParent == null || !spawnedCars.TryGetValue(placement, out var car) ||
+                car == null || car.carInfo == null ||
                 !car.gameObject.activeInHierarchy || car.transform.parent != parkingParent ||
                 car.HasLeftLot || car.isMoving || car.isParking || car.isParked ||
                 car.parkingSpace_current != null || DOTween.IsTweening(car.transform))
             {
-                skipped++;
+                carsSkipped++;
                 continue;
             }
 
             var position = car.transform.position;
-            if (placement.position.Equals(position)) continue;
+            var facing = car.carInfo.directions_Car;
+            var color = car.carInfo.objectColor_car;
+            if (placement.position.Equals(position) && placement.facing == facing &&
+                placement.ObjectColor_car == color) continue;
 
-            if (changed == 0) Undo.RegisterCompleteObjectUndo(builtLevel, "Save Car Positions");
+            RegisterUndo();
             placement.position = position;
-            changed++;
+            placement.facing = facing;
+            placement.ObjectColor_car = color;
+            carsChanged++;
         }
 
-        if (changed > 0)
+        int conesChanged = 0;
+        int conesSkipped = 0;
+        foreach (var placement in builtLevel.cones)
+        {
+            if (conesParent == null || !spawnedCones.TryGetValue(placement, out var cone) ||
+                cone == null || cone.transform.parent != conesParent)
+            {
+                conesSkipped++;
+                continue;
+            }
+
+            var position = cone.transform.position;
+            // initialCount is the starting quota, even after gameplay opens the cone.
+            if (placement.position.Equals(position) && placement.count == cone.initialCount &&
+                placement.coneColor == cone.coneColor) continue;
+
+            RegisterUndo();
+            placement.position = position;
+            placement.count = cone.initialCount;
+            placement.coneColor = cone.coneColor;
+            conesChanged++;
+        }
+
+        int garagesChanged = 0;
+        int garagesSkipped = 0;
+        foreach (var placement in builtLevel.garages)
+        {
+            if (garagesParent == null || !spawnedGarages.TryGetValue(placement, out var garage) ||
+                garage == null || garage.parent != garagesParent)
+            {
+                garagesSkipped++;
+                continue;
+            }
+
+            var position = garage.position;
+            if (placement.position.Equals(position)) continue;
+
+            RegisterUndo();
+            placement.position = position;
+            garagesChanged++;
+        }
+
+        if (hasChanges)
         {
             EditorUtility.SetDirty(builtLevel);
             AssetDatabase.SaveAssetIfDirty(builtLevel);
         }
 
-        Debug.Log($"[RuntimeLevelBuilder] {builtLevel.name}: đã lưu vị trí {changed} xe, bỏ qua {skipped} xe.", builtLevel);
+        Debug.Log($"[RuntimeLevelBuilder] {builtLevel.name}: đã lưu {carsChanged} xe, {conesChanged} cone, " +
+                  $"{garagesChanged} garage. Bỏ qua {carsSkipped} xe, {conesSkipped} cone, {garagesSkipped} garage.",
+                  builtLevel);
     }
 #endif
 
@@ -81,6 +143,8 @@ public class RuntimeLevelBuilder : MonoBehaviour
         if (level == null || library == null) { Debug.LogError("Missing LevelData/PrefabLibrary"); return; }
 #if UNITY_EDITOR
         spawnedCars.Clear();
+        spawnedCones.Clear();
+        spawnedGarages.Clear();
         builtLevel = levelData_Current;
 #endif
         Clear(parkingParent); Clear(conesParent); Clear(garagesParent);
@@ -116,7 +180,6 @@ public class RuntimeLevelBuilder : MonoBehaviour
             if (!pf) { Debug.LogWarning("Missing key: " + co.key); continue; }
             var go = Instantiate(pf, conesParent);
             go.transform.position = co.position;
-            // TODO: nếu có ConeController → gán màu/count tại đây
             var coneBlocker = go.GetComponent<ConeBlocker>();
             if (coneBlocker != null)
             {
@@ -124,6 +187,9 @@ public class RuntimeLevelBuilder : MonoBehaviour
                 if (config != null)
                 {
                     coneBlocker.Setup(config, count: co.count);
+#if UNITY_EDITOR
+                    spawnedCones[co] = coneBlocker;
+#endif
                 }
             }
         }
@@ -134,6 +200,9 @@ public class RuntimeLevelBuilder : MonoBehaviour
             if (!pf) { Debug.LogWarning("Missing key: " + g.key); continue; }
             var go = Instantiate(pf, garagesParent);
             go.transform.position = g.position;
+#if UNITY_EDITOR
+            spawnedGarages[g] = go.transform;
+#endif
 
             var garageController = go.GetComponent<GarageController>();
             if (garageController != null)
