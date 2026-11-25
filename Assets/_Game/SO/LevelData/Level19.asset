@@ -1,0 +1,218 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 150c3d5580fe59140a99aebd5f495b4c, type: 3}
+  m_Name: Level19
+  m_EditorClassIdentifier: 
+  levelName: Level 19
+  targetGuestsLeft: 0
+  parkingParentName: _PARKING
+  conesParentName: _CONES
+  garagesParentName: _GARAGES
+  cars:
+  - key: carmedium
+    position: {x: -4.97, y: -0.882, z: 0}
+    facing: 0
+    ObjectColor_car: 9
+  - key: carsmall
+    position: {x: -4.97, y: -2.372, z: 0}
+    facing: 0
+    ObjectColor_car: 6
+  - key: carsmall
+    position: {x: -4.97, y: -3.769, z: 0}
+    facing: 0
+    ObjectColor_car: 6
+  - key: carsmall
+    position: {x: -4.97, y: -5.166, z: 0}
+    facing: 0
+    ObjectColor_car: 6
+  - key: carsmall
+    position: {x: -4.97, y: -6.563, z: 0}
+    facing: 0
+    ObjectColor_car: 6
+  - key: carsmall
+    position: {x: -3.55, y: 0.523, z: 0}
+    facing: 0
+    ObjectColor_car: 1
+  - key: carsmall
+    position: {x: -3.55, y: -0.874, z: 0}
+    facing: 0
+    ObjectColor_car: 2
+  - key: carmedium
+    position: {x: -3.55, y: -2.396, z: 0}
+    facing: 0
+    ObjectColor_car: 2
+  - key: carsmall
+    position: {x: -3.55, y: -3.886, z: 0}
+    facing: 0
+    ObjectColor_car: 9
+  - key: carsmall
+    position: {x: -3.55, y: -5.283, z: 0}
+    facing: 0
+    ObjectColor_car: 2
+  - key: carsmall
+    position: {x: -2.13, y: -0.757, z: 0}
+    facing: 0
+    ObjectColor_car: 2
+  - key: carsmall
+    position: {x: -2.13, y: -2.154, z: 0}
+    facing: 0
+    ObjectColor_car: 2
+  - key: carsmall
+    position: {x: -2.13, y: -3.551, z: 0}
+    facing: 0
+    ObjectColor_car: 9
+  - key: carsmall
+    position: {x: -2.13, y: -4.948, z: 0}
+    facing: 0
+    ObjectColor_car: 6
+  - key: carsmall
+    position: {x: -2.13, y: -6.345, z: 0}
+    facing: 0
+    ObjectColor_car: 6
+  - key: carsmall
+    position: {x: -2.13, y: -7.723, z: 0}
+    facing: 4
+    ObjectColor_car: 3
+  - key: carsmall
+    position: {x: -0.71, y: 0.523, z: 0}
+    facing: 0
+    ObjectColor_car: 7
+  - key: carsmall
+    position: {x: -0.71, y: -0.874, z: 0}
+    facing: 0
+    ObjectColor_car: 9
+  - key: carsmall
+    position: {x: -0.71, y: -2.271, z: 0}
+    facing: 0
+    ObjectColor_car: 9
+  - key: carsmall
+    position: {x: -0.71, y: -3.668, z: 0}
+    facing: 0
+    ObjectColor_car: 9
+  - key: carsmall
+    position: {x: -0.71, y: -5.065, z: 0}
+    facing: 0
+    ObjectColor_car: 6
+  - key: carsmall
+    position: {x: -0.71, y: -6.462, z: 0}
+    facing: 0
+    ObjectColor_car: 9
+  - key: carsmall
+    position: {x: 0.71, y: -0.757, z: 0}
+    facing: 0
+    ObjectColor_car: 2
+  - key: carsmall
+    position: {x: 0.71, y: -2.154, z: 0}
+    facing: 0
+    ObjectColor_car: 6
+  - key: carsmall
+    position: {x: 0.71, y: -3.551, z: 0}
+    facing: 0
+    ObjectColor_car: 2
+  - key: carsmall
+    position: {x: 0.71, y: -4.948, z: 0}
+    facing: 0
+    ObjectColor_car: 2
+  - key: carsmall
+    position: {x: 0.71, y: -6.345, z: 0}
+    facing: 0
+    ObjectColor_car: 2
+  - key: carsmall
+    position: {x: 0.71, y: -7.742, z: 0}
+    facing: 0
+    ObjectColor_car: 9
+  - key: carsmall
+    position: {x: 2.13, y: 0.523, z: 0}
+    facing: 0
+    ObjectColor_car: 1
+  - key: carsmall
+    position: {x: 2.13, y: -0.874, z: 0}
+    facing: 0
+    ObjectColor_car: 9
+  - key: carsmall
+    position: {x: 2.13, y: -2.271, z: 0}
+    facing: 0
+    ObjectColor_car: 2
+  - key: carsmall
+    position: {x: 2.13, y: -3.668, z: 0}
+    facing: 0
+    ObjectColor_car: 9
+  - key: carsmall
+    position: {x: 2.13, y: -5.065, z: 0}
+    facing: 0
+    ObjectColor_car: 6
+  - key: carsmall
+    position: {x: 2.13, y: -6.443, z: 0}
+    facing: 4
+    ObjectColor_car: 3
+  - key: carsmall
+    position: {x: 3.55, y: -1.697, z: 0}
+    facing: 0
+    ObjectColor_car: 9
+  - key: carsmall
+    position: {x: 3.55, y: -3.094, z: 0}
+    facing: 0
+    ObjectColor_car: 9
+  - key: carsmall
+    position: {x: 3.55, y: -4.491, z: 0}
+    facing: 0
+    ObjectColor_car: 6
+  - key: carsmall
+    position: {x: 3.55, y: -5.888, z: 0}
+    facing: 0
+    ObjectColor_car: 9
+  - key: carmedium
+    position: {x: 3.55, y: -7.41, z: 0}
+    facing: 0
+    ObjectColor_car: 9
+  - key: carsmall
+    position: {x: 4.97, y: -0.457, z: 0}
+    facing: 0
+    ObjectColor_car: 2
+  - key: carsmall
+    position: {x: 4.97, y: -1.854, z: 0}
+    facing: 0
+    ObjectColor_car: 9
+  - key: carsmall
+    position: {x: 4.97, y: -3.251, z: 0}
+    facing: 0
+    ObjectColor_car: 9
+  - key: carsmall
+    position: {x: 4.97, y: -4.648, z: 0}
+    facing: 0
+    ObjectColor_car: 2
+  - key: carmedium
+    position: {x: 4.97, y: -6.17, z: 0}
+    facing: 0
+    ObjectColor_car: 2
+  cones:
+  - key: cone
+    position: {x: -4.97, y: 0.912, z: 0}
+    count: 4
+    coneColor: 1
+  - key: cone
+    position: {x: -2.13, y: 0.912, z: 0}
+    count: 8
+    coneColor: 3
+  - key: cone
+    position: {x: 0.71, y: 0.912, z: 0}
+    count: 4
+    coneColor: 7
+  - key: cone
+    position: {x: 3.55, y: -0.028, z: 0}
+    count: 8
+    coneColor: 3
+  - key: cone
+    position: {x: 4.97, y: 1.212, z: 0}
+    count: 4
+    coneColor: 3
+  garages: []
