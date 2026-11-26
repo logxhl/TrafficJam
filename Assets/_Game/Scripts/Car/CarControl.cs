@@ -25,6 +25,12 @@ public class CarControl : MonoBehaviour
     public float float_GateRayCast = 2f;
     public LayerMask carLayer;
 
+    [Header("----- Boarding Bounce -----")]
+    [SerializeField] private Vector3 boardBouncePunch = new Vector3(0.025f, -0.04f, 0f);
+    [SerializeField] private float boardBounceDuration = 0.16f;
+    [SerializeField] private int boardBounceVibrato = 4;
+    [SerializeField] private float boardBounceElasticity = 0.5f;
+
     // ==== NEW: Runtime Nav to parking ====
     [Header("----- Runtime Nav -----")]
     public bool HasLeftLot;          // <== Map theo project bạn
@@ -50,6 +56,9 @@ public class CarControl : MonoBehaviour
     [HideInInspector] public Sprite sprite_GarageSign;          // biểu tượng gara hiển thị trên mini map
     private Transform _root;
     private HashSet<Collider2D> _selfCols;          // tất cả collider thuộc chiếc xe này
+    private Vector3 _baseBodyScale = Vector3.one;
+    private Tween _boardBounceTween;
+    private Transform BounceTarget => spriteRenderer_CarBody != null ? spriteRenderer_CarBody.transform : transform;
 
     // Sự kiện
     public event Action<CarControl> OnArrivedParking; // báo về ParkingLotManager
@@ -61,6 +70,13 @@ public class CarControl : MonoBehaviour
     {
         v2_EntrancePos = new Vector2(-1000f, -1000f);
         isParking = false;
+        _baseBodyScale = BounceTarget.localScale;
+    }
+
+    private void OnDisable()
+    {
+        _boardBounceTween?.Kill();
+        _boardBounceTween = null;
     }
 
     public void HandleStart()
@@ -573,6 +589,7 @@ public class CarControl : MonoBehaviour
 
     public void OnPassengerBoarded()
     {
+        PlayBoardBounce();
         listSpriteRenderer_GuestsOnCar[int_GuestCount].gameObject.SetActive(true);
         int_GuestCount++;
         if (int_GuestCount >= Capacity && !isFulled)
@@ -584,6 +601,26 @@ public class CarControl : MonoBehaviour
                 g.gameObject.SetActive(false);
             }
         }
+    }
+
+    private void PlayBoardBounce()
+    {
+        Transform target = BounceTarget;
+        if (target == null) return;
+
+        _boardBounceTween?.Kill();
+        target.localScale = _baseBodyScale;
+        _boardBounceTween = target
+            .DOPunchScale(boardBouncePunch, boardBounceDuration, boardBounceVibrato, boardBounceElasticity)
+            .SetLink(gameObject)
+            .OnComplete(() =>
+            {
+                if (target != null) target.localScale = _baseBodyScale;
+            })
+            .OnKill(() =>
+            {
+                if (target != null) target.localScale = _baseBodyScale;
+            });
     }
 
 // Khi đủ khách → xoay xe, set sprite, nhả chỗ, chạy về Entrance
