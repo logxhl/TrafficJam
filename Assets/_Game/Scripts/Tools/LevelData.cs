@@ -41,6 +41,17 @@ public class LevelData : ScriptableObject
     {
         public string key = "Garage";
         public Vector3 position;
+        [Tooltip("Bật để dùng Cars bên dưới. Tắt để dùng danh sách xe có sẵn trong prefab.")]
+        public bool overridePresetCars;
+        [Tooltip("Xe ở đầu danh sách ra cửa trước.")]
+        public List<GarageCar> cars = new();
+    }
+
+    [Serializable]
+    public class GarageCar
+    {
+        public CarSize size = CarSize.Small4Slots;
+        public ObjectColor color = ObjectColor.Red;
     }
 
     [Header("Placements")]

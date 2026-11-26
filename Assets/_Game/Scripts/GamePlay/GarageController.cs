@@ -31,6 +31,61 @@ public class GarageController : MonoBehaviour
     private readonly Queue<CarControl> queueInGarage = new Queue<CarControl>();
     private int int_LimitCarPush = 0;
 
+    private static readonly Directions[] gateDirections =
+    {
+        Directions.Up, Directions.UpLeft, Directions.Left, Directions.DownLeft,
+        Directions.Down, Directions.DownRight, Directions.Right, Directions.UpRight
+    };
+
+    public void ConfigureCars(IReadOnlyList<LevelData.GarageCar> cars, PrefabLibrary library)
+    {
+        // Each garage prefab has a SpawnPoint for the cars waiting inside it.
+        var spawnPoint = transform.Find("SpawnPoint");
+        if (spawnPoint == null)
+        {
+            Debug.LogWarning("[GarageController] Missing SpawnPoint on " + name, this);
+            return;
+        }
+
+        foreach (var preset in list_PresetCars)
+        {
+            if (preset == null) continue;
+            preset.gameObject.SetActive(false);
+            Destroy(preset.gameObject);
+        }
+        list_PresetCars.Clear();
+
+        int sector = Mathf.RoundToInt(Vector2.SignedAngle(Vector2.up, transform.up) / 45f);
+        var facing = gateDirections[(sector + gateDirections.Length) % gateDirections.Length];
+
+        foreach (var placement in cars)
+        {
+            string key = placement.size switch
+            {
+                CarSize.Small4Slots => "carsmall",
+                CarSize.Medium6Slots => "carmedium",
+                CarSize.Big10Slots => "carbig",
+                _ => null
+            };
+            var prefab = key != null ? library.Get(key) : null;
+            var template = prefab != null ? prefab.GetComponent<CarControl>() : null;
+            if (template == null || template.carInfo == null || template.carInfo.carSize != placement.size)
+            {
+                Debug.LogWarning("[GarageController] Missing car prefab for " + placement.size, this);
+                continue;
+            }
+
+            var car = Instantiate(template, spawnPoint);
+            car.gameObject.SetActive(false);
+            car.transform.localPosition = Vector3.zero;
+            car.transform.localScale = Vector3.one * 0.1f;
+            car.carInfo.objectColor_car = placement.color;
+            car.carInfo.directions_Car = facing;
+            car.carInfo.carArea = CarArea.InGarage;
+            list_PresetCars.Add(car);
+        }
+    }
+
     public IEnumerator HandleStart()
     {
         // Build queue theo thứ tự bạn đã kéo trong Inspector

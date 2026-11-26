@@ -22,6 +22,9 @@ public class RuntimeLevelBuilder : MonoBehaviour
 
     public bool autoBuildOnStart = true;
 
+    private readonly List<GarageController> spawnedGarageControllers = new();
+    public IReadOnlyList<GarageController> SpawnedGarages => spawnedGarageControllers;
+
 #if UNITY_EDITOR
     private readonly Dictionary<LevelData.CarPlacement, CarControl> spawnedCars = new();
     private readonly Dictionary<LevelData.ConePlacement, ConeBlocker> spawnedCones = new();
@@ -148,6 +151,7 @@ public class RuntimeLevelBuilder : MonoBehaviour
         builtLevel = levelData_Current;
 #endif
         Clear(parkingParent); Clear(conesParent); Clear(garagesParent);
+        spawnedGarageControllers.Clear();
         GameController.Instance.parkingLotManager.listCarControl_CarInParkingLot.Clear();
 
         foreach (var c in levelData_Current.cars)
@@ -207,6 +211,10 @@ public class RuntimeLevelBuilder : MonoBehaviour
             var garageController = go.GetComponent<GarageController>();
             if (garageController != null)
             {
+                if (g.overridePresetCars)
+                    garageController.ConfigureCars(g.cars, library);
+
+                spawnedGarageControllers.Add(garageController);
                 GameController.Instance.garageController = garageController;
                 foreach (var car in garageController.list_PresetCars)
                 {

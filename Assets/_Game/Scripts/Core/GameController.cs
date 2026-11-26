@@ -43,7 +43,11 @@ public class GameController : MonoBehaviour
         yield return StartCoroutine(parkingLotManager.HandleStart());
 
         // Bước 2: chạy GarageController
-        yield return StartCoroutine(garageController.HandleStart());
+        if (runtimeLevelBuilder.SpawnedGarages.Count == 0 && garageController != null)
+            yield return StartCoroutine(garageController.HandleStart());
+        else
+            foreach (var garage in runtimeLevelBuilder.SpawnedGarages)
+                yield return StartCoroutine(garage.HandleStart());
 
         // Bước 3: chạy GuestManager
         yield return StartCoroutine(guestManager.HandleStart());

@@ -227,7 +227,37 @@ public class MapLayoutTool : EditorWindow
     void BakeFromScene()
     {
         if (level == null) { Debug.LogError("Chưa chọn LevelData"); return; }
-        level.cars.Clear(); level.cones.Clear(); level.garages.Clear();
+        if (garagesParent != null)
+        {
+            var previous = level.garages.ToList();
+            var layouts = new System.Collections.Generic.List<LevelData.GaragePlacement>();
+            foreach (Transform t in garagesParent)
+            {
+                var matches = previous.Where(g => string.Equals(g.key, t.name, StringComparison.OrdinalIgnoreCase)).ToList();
+                var placement = matches.FirstOrDefault(g => g.position.Equals(t.position));
+                if (placement == null && matches.Count == 1)
+                    placement = matches[0];
+                if (placement == null && matches.Any(g => g.overridePresetCars))
+                {
+                    Debug.LogWarning("[MapLayoutTool] Trùng key garage sau khi di chuyển. Hãy dùng Save Layout to LevelData trong Play Mode để giữ đúng hàng đợi.");
+                    return;
+                }
+
+                placement ??= new LevelData.GaragePlacement { key = t.name };
+                previous.Remove(placement);
+                layouts.Add(new LevelData.GaragePlacement
+                {
+                    key = placement.key,
+                    position = t.position,
+                    overridePresetCars = placement.overridePresetCars,
+                    cars = placement.cars
+                });
+            }
+            level.garages.Clear();
+            level.garages.AddRange(layouts);
+        }
+
+        level.cars.Clear(); level.cones.Clear();
 
         if (parkingParent != null)
         {
@@ -254,17 +284,6 @@ public class MapLayoutTool : EditorWindow
             foreach (Transform t in conesParent)
             {
                 level.cones.Add(new LevelData.ConePlacement
-                {
-                    key = t.name, position = t.position
-                });
-            }
-        }
-
-        if (garagesParent != null)
-        {
-            foreach (Transform t in garagesParent)
-            {
-                level.garages.Add(new LevelData.GaragePlacement
                 {
                     key = t.name, position = t.position
                 });

@@ -19,11 +19,11 @@ MonoBehaviour:
   garagesParentName: _GARAGES
   cars:
   - key: carmedium
-    position: {x: -3.7, y: 0.76, z: 0}
+    position: {x: -4.02, y: 1.03, z: 0}
     facing: 7
     ObjectColor_car: 1
   - key: carmedium
-    position: {x: 2.22, y: 0.86, z: 0}
+    position: {x: 2.45, y: 1.06, z: 0}
     facing: 3
     ObjectColor_car: 2
   - key: carsmall
@@ -103,19 +103,19 @@ MonoBehaviour:
     facing: 0
     ObjectColor_car: 7
   - key: carsmall
-    position: {x: -0.74, y: -3.74, z: 0}
+    position: {x: 3.74, y: -4.85, z: 0}
     facing: 0
     ObjectColor_car: 7
   - key: carsmall
-    position: {x: -0.74, y: -5.14, z: 0}
+    position: {x: -0.74, y: -5.51, z: 0}
     facing: 0
     ObjectColor_car: 3
   - key: carsmall
-    position: {x: -0.74, y: -6.54, z: 0}
+    position: {x: -0.74, y: -6.97, z: 0}
     facing: 0
     ObjectColor_car: 5
   - key: carsmall
-    position: {x: -0.74, y: -7.94, z: 0}
+    position: {x: -0.74, y: -8.43, z: 0}
     facing: 0
     ObjectColor_car: 7
   - key: carsmall
@@ -181,10 +181,10 @@ MonoBehaviour:
   cones:
   - key: cone
     position: {x: -2.22, y: 1.48, z: 0}
-    count: 8
+    count: 4
     coneColor: 6
   - key: cone
-    position: {x: -0.74, y: 0.84, z: 0}
+    position: {x: -0.77, y: -3.86, z: 0}
     count: 8
     coneColor: 2
   - key: cone
@@ -196,5 +196,13 @@ MonoBehaviour:
     count: 4
     coneColor: 2
   garages:
-  - key: garagetopright
-    position: {x: 3.15, y: -6.55, z: 0}
+  - key: garagetop
+    position: {x: 6.23, y: -8, z: 0}
+    overridePresetCars: 1
+    cars:
+    - size: 0
+      color: 7
+    - size: 0
+      color: 1
+    - size: 1
+      color: 6

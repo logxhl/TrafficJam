@@ -47,9 +47,9 @@ Trong danh sách `Gameplay` kiểm tra ngày 25/11/2026, thứ tự đầu danh 
 
 ## 4. Bố trí garage
 
-- `LevelData.garages` lưu `key` và world `position`. Garage dùng thứ tự xe trong `GarageController.list_PresetCars` của prefab, nhả từng xe khi cửa thông. Kiểm tra prefab có xe sẵn và giữ lối đi trống từ điểm chờ tới biên. [GarageController.cs](Assets/_Game/Scripts/GamePlay/GarageController.cs)
-- Luồng khởi tạo hiện tại giữ một tham chiếu `GameController.garageController` và gọi `HandleStart` trên tham chiếu đó. Với luồng này, bố trí một garage có xe mỗi màn. [GameController.cs](Assets/_Game/Scripts/Core/GameController.cs)
-- `Level23` dùng `garagetopright` ở góc dưới phải. Xe hồng 4 chỗ ra trước, xe cyan 6 chỗ ra sau. Xe hồng trong garage góp vào ngưỡng 8 khách của cone hồng. Khi tính lời giải, đưa cả hai xe và thứ tự nhả vào mô hình hàng khách.
+- Trong `LevelData > Garages`, chọn `Key` và world `Position`. Bật `Override Preset Cars` để cấu hình `Cars` theo từng garage. Chọn `Size` (4, 6 hoặc 10 ghế) và `Color` cho từng phần tử. Xe đầu danh sách ra trước, hướng được lấy theo cửa garage. Khi tùy chọn tắt, màn tiếp tục dùng danh sách xe có sẵn trong prefab.
+- Builder đăng ký xe của tất cả garage trước khi tính hàng khách. Mỗi garage có hàng đợi riêng và nhả xe khi cửa thông. Kiểm tra đường đi từ mỗi điểm chờ tới biên và số ghế theo màu nếu màn có cone. [GarageController.cs](Assets/_Game/Scripts/GamePlay/GarageController.cs)
+- `Level23` từng dùng `garagetopright`, có thêm một xe Pink 4 chỗ. Sau khi đổi sang `garagetop`, màn chỉ còn một xe Pink 4 chỗ ngoài bãi, nên cone Pink có ngưỡng 4 khách. Khi đổi garage, đọc lại màu, sức chứa và thứ tự nhả xe trước khi giữ hoặc chỉnh ngưỡng cone.
 
 ## 5. Xác minh trước khi bàn giao
 
