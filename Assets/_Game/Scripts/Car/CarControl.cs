@@ -105,7 +105,6 @@ public class CarControl : MonoBehaviour
                 isVipCar = false;
             }
             transform.position = Vector2.MoveTowards(transform.position, v2_EntrancePos, float_MoveSpeed * Time.deltaTime);
-            parkingSpace_current.isOccupied = false;
         }
         
         if (((isFulled && isParked) || (isMoving && !isParked && parkingSpace_current != null)) &&
@@ -113,6 +112,11 @@ public class CarControl : MonoBehaviour
         {
             if (isParked)
             {
+                if (parkingSpace_current != null)
+                {
+                    parkingSpace_current.isOccupied = false;
+                    parkingSpace_current = null;
+                }
                 carInfo.directions_Car = Directions.Right;
                 isMoving = true;
                 isFulled = false;
@@ -329,9 +333,12 @@ public class CarControl : MonoBehaviour
     private void OnMouseUpAsButton()
     {
         if (!isCanControl || GameController.Instance.isLose) return; // ✅ thêm dòng này để xe đang chờ ở cửa không nhận click "đi park"
-        if (isMoving || isParked ||!GameController.Instance.isGameStarted || Time.timeScale <= 0f) return;
+        if (isMoving || isParking || isParked || isFulled || !GameController.Instance.isGameStarted || Time.timeScale <= 0f) return;
         if (GameController.Instance.isUseVipSlot)
         {
+            var vipSpace = GameController.Instance.parkingLotManager.listParkingSpaces_All[0];
+            if (vipSpace == null || vipSpace.isOccupied) return;
+
             HasLeftLot = true;
             isVipCar = true;
             // ✅ CHUẨN BỊ HÀNG KHÁCH CHO VIP (dồn đúng màu + spawn bù)
@@ -341,7 +348,7 @@ public class CarControl : MonoBehaviour
                 gm.PrepareLineForCar(this); // dồn đúng màu lên đầu + đủ số lượng
             }
             
-            parkingSpace_current = GameController.Instance.parkingLotManager.listParkingSpaces_All[0];
+            parkingSpace_current = vipSpace;
             parkingSpace_current.isOccupied = true;
 
             // ✅ LẤY ENTRANCE CỦA SLOT VIP cho bước rời bãi
@@ -530,7 +537,7 @@ public class CarControl : MonoBehaviour
 
         foreach (var space in lot.listParkingSpaces_current)
         {
-            if (!space.isOccupied) // tùy thuộc vào logic slot của bạn
+            if (space != null && !space.isOccupied && !space.isLocked && !space.isVipSlot) // tùy thuộc vào logic slot của bạn
             {
                 v2_EntrancePos = space.transform.GetChild(0).position;
                 parkingSpace_current = space;
@@ -591,8 +598,7 @@ public class CarControl : MonoBehaviour
             spriteRenderer_CarBody.sprite = listSprite_CarDirections[3]; // DownLeft sprite bạn đang dùng khi quay đầu
             spriteColliderSync.ApplyCurrentSpriteShape();
         }
-        // mở cờ rời bãi + nhả slot để xe khác chọn
-        if (parkingSpace_current != null) parkingSpace_current.isOccupied = false;
+        // mở cờ rời bãi (slot sẽ được nhả khi xe tới v2_EntrancePos trong Update)
         
         // ✅ bật cờ rời bãi để Update() MoveTowards(v2_EntrancePos)
         //isFulled = true;
