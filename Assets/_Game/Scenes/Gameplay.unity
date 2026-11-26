@@ -44038,6 +44038,10 @@ MonoBehaviour:
   carLayer:
     serializedVersion: 2
     m_Bits: 0
+  boardBouncePunch: {x: 0.025, y: -0.04, z: 0}
+  boardBounceDuration: 0.16
+  boardBounceVibrato: 4
+  boardBounceElasticity: 0.5
   HasLeftLot: 0
   int_GuestCount: 0
   v2_EntrancePos: {x: 0, y: 0}
@@ -44438,6 +44442,10 @@ MonoBehaviour:
   carLayer:
     serializedVersion: 2
     m_Bits: 0
+  boardBouncePunch: {x: 0.025, y: -0.04, z: 0}
+  boardBounceDuration: 0.16
+  boardBounceVibrato: 4
+  boardBounceElasticity: 0.5
   HasLeftLot: 0
   int_GuestCount: 0
   v2_EntrancePos: {x: 0, y: 0}
