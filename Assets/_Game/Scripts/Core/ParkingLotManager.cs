@@ -86,33 +86,58 @@ public class ParkingLotManager : MonoBehaviour
     
     /// <summary>
     /// Shuffle màu trong từng nhóm kích cỡ, chỉ cho các xe chưa rời bãi.
+    /// Ưu tiên đưa màu của khách đang ở đầu hàng ra xe có thể đi được và không bị cone/xe khác chặn.
     /// Trả về số xe thực sự bị đổi màu.
     /// </summary>
-    public int  ShuffleColorsSmart()
+    public int ShuffleColorsSmart()
     {
-        // Lấy các xe còn trong bãi
-        var activeCars = listCarControl_CarInParkingLot.Where(c => c != null && !c.HasLeftLot && !c.isWaitingAtGate && c.gameObject.activeInHierarchy).ToList();
+        // Lấy các xe còn trong bãi và chưa di chuyển/đỗ
+        var activeCars = listCarControl_CarInParkingLot
+            .Where(c => c != null && !c.HasLeftLot && !c.isWaitingAtGate &&
+                        !c.isMoving && !c.isParking && !c.isParked && !c.isFulled &&
+                        c.gameObject.activeInHierarchy)
+            .ToList();
         if (activeCars.Count <= 1)
             return 0;
 
+        ObjectColor? frontGuestColor = GetFrontGuestColor();
         int changedCount = 0;
 
-        // Nhóm theo kích cỡ
+        // Nhóm theo kích cỡ để bảo toàn tổng sức chứa theo màu
         var groups = activeCars
-            .GroupBy(c => c.carInfo.carSize)         // CarSize
+            .GroupBy(c => c.carInfo.carSize)
             .ToList();
 
         foreach (var group in groups)
         {
-            // Nhóm có < 2 xe thì bỏ qua (shuffle cũng như không)
             var cars = group.ToList();
             if (cars.Count <= 1) continue;
 
-            // Lấy túi màu của nhóm
-            var colors = cars.Select(c => c.carInfo.objectColor_car).ToList();
+            var originalColors = cars.Select(c => c.carInfo.objectColor_car).ToList();
+            bool hasMultipleColors = originalColors.Distinct().Count() > 1;
 
-            // Xáo trộn Fisher–Yates
-            FisherYatesShuffle(colors);
+            var movableIndices = new List<int>();
+            for (int i = 0; i < cars.Count; i++)
+            {
+                if (IsCarClearToExit(cars[i]))
+                    movableIndices.Add(i);
+            }
+
+            List<ObjectColor> colors = null;
+            const int maxAttempts = 5;
+            for (int attempt = 0; attempt < maxAttempts; attempt++)
+            {
+                colors = new List<ObjectColor>(originalColors);
+                FisherYatesShuffle(colors);
+
+                if (frontGuestColor.HasValue && movableIndices.Count > 0)
+                {
+                    EnsureColorOnMovableCar(colors, movableIndices, frontGuestColor.Value);
+                }
+
+                if (!hasMultipleColors || HasAnyColorChanged(originalColors, colors))
+                    break;
+            }
 
             // Gán lại – đếm số xe thật sự đổi màu để thống kê
             for (int i = 0; i < cars.Count; i++)
@@ -126,6 +151,80 @@ public class ParkingLotManager : MonoBehaviour
         }
 
         return changedCount;
+    }
+
+    private static ObjectColor? GetFrontGuestColor()
+    {
+        var gm = GameController.Instance != null ? GameController.Instance.guestManager : null;
+        if (gm != null && gm.listGuests != null && gm.listGuests.Count > 0 && gm.listGuests[0] != null)
+            return gm.listGuests[0].objectColor;
+        return null;
+    }
+
+    private static void EnsureColorOnMovableCar(List<ObjectColor> colors, List<int> movableIndices, ObjectColor targetColor)
+    {
+        foreach (int idx in movableIndices)
+        {
+            if (colors[idx] == targetColor)
+                return;
+        }
+
+        var movableSet = new HashSet<int>(movableIndices);
+        for (int j = 0; j < colors.Count; j++)
+        {
+            if (movableSet.Contains(j) || colors[j] != targetColor)
+                continue;
+
+            int targetIdx = movableIndices[Random.Range(0, movableIndices.Count)];
+            (colors[targetIdx], colors[j]) = (colors[j], colors[targetIdx]);
+            return;
+        }
+    }
+
+    private static bool HasAnyColorChanged(List<ObjectColor> original, List<ObjectColor> shuffled)
+    {
+        for (int i = 0; i < original.Count; i++)
+        {
+            if (original[i] != shuffled[i])
+                return true;
+        }
+        return false;
+    }
+
+    private static bool IsCarClearToExit(CarControl car)
+    {
+        if (car == null || car.isBlocked)
+            return false;
+
+        Vector2 dir = car.GetForwardDirection();
+        if (dir == Vector2.zero)
+            return false;
+
+        Vector2 origin = car.transform.position;
+        RaycastHit2D[] hits = Physics2D.RaycastAll(origin, dir, 30f);
+        if (hits == null || hits.Length == 0)
+            return true;
+
+        Array.Sort(hits, (a, b) => a.distance.CompareTo(b.distance));
+
+        foreach (var hit in hits)
+        {
+            if (hit.collider == null || car.OwnsCollider(hit.collider))
+                continue;
+
+            if (hit.collider.GetComponentInParent<BoundaryNode>() != null)
+                return true;
+
+            var cone = hit.collider.GetComponentInParent<ConeBlocker>();
+            if (cone != null && cone.gameObject.activeInHierarchy && hit.collider.enabled)
+                return false;
+
+            var otherCar = hit.collider.GetComponentInParent<CarControl>();
+            if (otherCar != null && otherCar != car && !otherCar.HasLeftLot && otherCar.gameObject.activeInHierarchy)
+                return false;
+        }
+
+        return true;
     }
 
     // Fisher–Yates chuẩn

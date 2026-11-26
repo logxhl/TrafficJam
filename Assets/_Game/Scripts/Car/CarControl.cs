@@ -682,6 +682,15 @@ public class CarControl : MonoBehaviour
     }
 
 
+    public Vector2 GetForwardDirection() => GetDirectionVector(carInfo != null ? carInfo.directions_Car : Directions.Up);
+
+    public bool OwnsCollider(Collider2D col)
+    {
+        if (col == null) return false;
+        if (_selfCols != null && _selfCols.Contains(col)) return true;
+        return col.transform.IsChildOf(transform);
+    }
+
     // Helper: đổi enum -> vector hướng (8 hướng)
     private Vector2 GetDirectionVector(Directions d)
     {
