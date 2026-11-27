@@ -49,7 +49,9 @@ public class CarControl : MonoBehaviour
     public int Capacity => carInfo.carSize == CarSize.Big10Slots ? 10 :
         carInfo.carSize == CarSize.Medium6Slots ? 6 : 4;
     public ParkingSpace parkingSpace_current;
-    private BoundaryNode boundaryNode_current;
+    private BoundaryNode pendingBoundary;
+    private Directions pendingBoundaryOutgoing;
+    private bool pendingBoundaryMatchesHeading;
     private Vector2 v2_base;
     private bool isCanControl = true;
     [HideInInspector] public bool isWaitingAtGate = false;
@@ -75,6 +77,7 @@ public class CarControl : MonoBehaviour
 
     private void OnDisable()
     {
+        pendingBoundary = null;
         _boardBounceTween?.Kill();
         _boardBounceTween = null;
     }
@@ -91,6 +94,12 @@ public class CarControl : MonoBehaviour
     
     private void Update()
     {
+        // Các callback physics chỉ chọn tường. Áp dụng một lần trước khi xe tiếp tục chạy.
+        var boundary = pendingBoundary;
+        pendingBoundary = null;
+        if (boundary != null && CanRedirectAtBoundary())
+            ApplyBoundaryRedirect(boundary, pendingBoundaryOutgoing);
+
         CheckBlockByRaycast();
         
         if(!isCanControl || GameController.Instance.isLose) return;
@@ -415,108 +424,20 @@ public class CarControl : MonoBehaviour
         }
     }
 
-    // Đổi hướng khi chạm node góc: BoundaryNode quyết định hướng mới (rules[0].outgoing)
     private void OnTriggerEnter2D(Collider2D other)
     {
-        // Hoặc nếu collider nằm trong cùng root (ví dụ xe có collider con)
-        // if (other.transform.root == transform.root)
-        //     return;
-        
-        if(isParked || GameController.Instance.isUseVipSlot || isWaitingAtGate) return;
-        // Bỏ qua collider của chính mình
-        if (other.gameObject == gameObject)
-            return;
-        
-        // 1. Nếu là BoundaryNode thì xử lý rẽ như cũ
+        if (isParked || GameController.Instance.isUseVipSlot || isWaitingAtGate ||
+            other.gameObject == gameObject) return;
+
         var node = other.GetComponent<BoundaryNode>();
         if (node != null && node.rules != null && node.rules.Count > 0)
         {
-            int defaultLayer = LayerMask.NameToLayer("Default");
-            foreach (Transform t in GetComponentsInChildren<Transform>(true))
-            {
-                t.gameObject.layer = defaultLayer;
-            }
-            HasLeftLot = true;
-            spriteRenderer_Arrow.sprite = null;
-            if(node.kind == BoundaryNode.NodeKind.Entrance)
-            {
-                if (parkingSpace_current != null)
-                {
-                    if (v2_EntrancePos.x < transform.position.x)
-                    {
-                        if(Vector2.Distance(transform.position, GameController.Instance.parkingLotManager.listTrans_Points[3].position) < 1.5f)
-                            transform.position = GameController.Instance.parkingLotManager.listTrans_Points[3].position;
-                        else
-                        {
-                            transform.position = new Vector2(transform.position.x, GameController.Instance.parkingLotManager.listTrans_Points[3].position.y);
-                        }
-                        carInfo.directions_Car = Directions.Left;
-                    }
-                    else if (v2_EntrancePos.x > transform.position.x)
-                    {
-                        if(Vector2.Distance(transform.position, GameController.Instance.parkingLotManager.listTrans_Points[1].position) < 1.5f)
-                            transform.position = GameController.Instance.parkingLotManager.listTrans_Points[1].position;
-                        else
-                        {
-                            transform.position = new Vector2(transform.position.x, GameController.Instance.parkingLotManager.listTrans_Points[3].position.y);
-                        }
-                        carInfo.directions_Car = Directions.Right;
-                    }
-                }
-                boundaryNode_current = node;
-                return;
-            }
-
-            if (node.kind == BoundaryNode.NodeKind.LeftDown)
-            {
-                if (Vector2.Distance(transform.position,
-                        GameController.Instance.parkingLotManager.listTrans_Points[0].position) < 1.5f)
-                {
-                    transform.position = GameController.Instance.parkingLotManager.listTrans_Points[0].position;
-                    carInfo.directions_Car = Directions.Up;
-                    return;
-                }
-                transform.position =
-                    new Vector2(GameController.Instance.parkingLotManager.listTrans_Points[0].position.x,
-                        transform.position.y);
-                
-                if (Vector2.Distance(transform.position,
-                        GameController.Instance.parkingLotManager.listTrans_Points[1].position) < 1.5f)
-                {
-                    transform.position = GameController.Instance.parkingLotManager.listTrans_Points[1].position;
-                    carInfo.directions_Car = Directions.Right;
-                    return;
-                }
-            }
-            else if (node.kind == BoundaryNode.NodeKind.RightDown)
-            {
-                if (Vector2.Distance(transform.position,
-                        GameController.Instance.parkingLotManager.listTrans_Points[2].position) < 1.5f)
-                {
-                    transform.position = GameController.Instance.parkingLotManager.listTrans_Points[2].position;
-                    carInfo.directions_Car = Directions.Up;
-                    return;
-                }
-                transform.position =
-                    new Vector2(GameController.Instance.parkingLotManager.listTrans_Points[2].position.x,
-                        transform.position.y);
-                
-                if (Vector2.Distance(transform.position,
-                        GameController.Instance.parkingLotManager.listTrans_Points[3].position) < 1.5f)
-                {
-                    transform.position = GameController.Instance.parkingLotManager.listTrans_Points[3].position;
-                    carInfo.directions_Car = Directions.Left;
-                    return;
-                }
-            }
-            else if (node.kind == BoundaryNode.NodeKind.Wall)
-            {
-                transform.position = new Vector2(transform.position.x, GameController.Instance.parkingLotManager.listTrans_Points[0].position.y);
-            }
-            boundaryNode_current = node;
-            carInfo.directions_Car = node.rules[0].outgoing;
+            if (CanRedirectAtBoundary())
+                QueueBoundaryRedirect(node);
+            return;
         }
-        
+
+        if (pendingBoundary != null) return;
         if (isBlocked && !HasLeftLot)
         {
             isMoving = false;
@@ -539,7 +460,154 @@ public class CarControl : MonoBehaviour
                 });
         }
     }
-    
+
+    private bool CanRedirectAtBoundary()
+    {
+        return isActiveAndEnabled && isMoving && !isParking && !isParked && !isWaitingAtGate &&
+               !GameController.Instance.isUseVipSlot;
+    }
+
+    private void QueueBoundaryRedirect(BoundaryNode node)
+    {
+        var incoming = GetDirectionVector(carInfo.directions_Car);
+        float bestAlignment = 0f;
+        var outgoing = node.rules[0].outgoing;
+        foreach (var rule in node.rules)
+        {
+            // Hai hướng chéo cũng có thể tiến vào một tường cấu hình theo trục ngang hoặc dọc.
+            float alignment = Vector2.Dot(incoming, GetDirectionVector(rule.incoming));
+            if (alignment <= bestAlignment) continue;
+            bestAlignment = alignment;
+            outgoing = rule.outgoing;
+        }
+
+        // Lần chạm đầu dùng hướng rẽ đã cấu hình kể cả khi incoming lệch.
+        // Sau khi xe rời bãi, collider đổi theo sprite có thể chạm lại tường vừa rẽ khỏi.
+        bool matchesHeading = bestAlignment > 0f;
+        if (HasLeftLot && !matchesHeading) return;
+        if (pendingBoundary != null && !PreferBoundary(node, outgoing, matchesHeading)) return;
+
+        pendingBoundary = node;
+        pendingBoundaryOutgoing = outgoing;
+        pendingBoundaryMatchesHeading = matchesHeading;
+    }
+
+    private bool PreferBoundary(BoundaryNode node, Directions outgoing, bool matchesHeading)
+    {
+        if (matchesHeading != pendingBoundaryMatchesHeading) return matchesHeading;
+
+        int priority = GetBoundaryPriority(node.kind);
+        int pendingPriority = GetBoundaryPriority(pendingBoundary.kind);
+        if (priority != pendingPriority) return priority > pendingPriority;
+
+        float distance = (node.transform.position - transform.position).sqrMagnitude;
+        float pendingDistance = (pendingBoundary.transform.position - transform.position).sqrMagnitude;
+        if (distance != pendingDistance) return distance < pendingDistance;
+
+        return (int)outgoing < (int)pendingBoundaryOutgoing;
+    }
+
+    private static int GetBoundaryPriority(BoundaryNode.NodeKind kind)
+    {
+        switch (kind)
+        {
+            case BoundaryNode.NodeKind.Entrance:
+                return 2;
+            case BoundaryNode.NodeKind.Corner:
+            case BoundaryNode.NodeKind.LeftDown:
+            case BoundaryNode.NodeKind.RightDown:
+                return 1;
+            default:
+                return 0;
+        }
+    }
+
+    private void ApplyBoundaryRedirect(BoundaryNode node, Directions outgoing)
+    {
+        int defaultLayer = LayerMask.NameToLayer("Default");
+        foreach (Transform t in GetComponentsInChildren<Transform>(true))
+        {
+            t.gameObject.layer = defaultLayer;
+        }
+        HasLeftLot = true;
+        spriteRenderer_Arrow.sprite = null;
+        if(node.kind == BoundaryNode.NodeKind.Entrance)
+        {
+            if (parkingSpace_current != null)
+            {
+                if (v2_EntrancePos.x < transform.position.x)
+                {
+                    if(Vector2.Distance(transform.position, GameController.Instance.parkingLotManager.listTrans_Points[3].position) < 1.5f)
+                        transform.position = GameController.Instance.parkingLotManager.listTrans_Points[3].position;
+                    else
+                    {
+                        transform.position = new Vector2(transform.position.x, GameController.Instance.parkingLotManager.listTrans_Points[3].position.y);
+                    }
+                    carInfo.directions_Car = Directions.Left;
+                }
+                else if (v2_EntrancePos.x > transform.position.x)
+                {
+                    if(Vector2.Distance(transform.position, GameController.Instance.parkingLotManager.listTrans_Points[1].position) < 1.5f)
+                        transform.position = GameController.Instance.parkingLotManager.listTrans_Points[1].position;
+                    else
+                    {
+                        transform.position = new Vector2(transform.position.x, GameController.Instance.parkingLotManager.listTrans_Points[3].position.y);
+                    }
+                    carInfo.directions_Car = Directions.Right;
+                }
+            }
+            return;
+        }
+
+        if (node.kind == BoundaryNode.NodeKind.LeftDown)
+        {
+            if (Vector2.Distance(transform.position,
+                    GameController.Instance.parkingLotManager.listTrans_Points[0].position) < 1.5f)
+            {
+                transform.position = GameController.Instance.parkingLotManager.listTrans_Points[0].position;
+                carInfo.directions_Car = Directions.Up;
+                return;
+            }
+            transform.position =
+                new Vector2(GameController.Instance.parkingLotManager.listTrans_Points[0].position.x,
+                    transform.position.y);
+
+            if (Vector2.Distance(transform.position,
+                    GameController.Instance.parkingLotManager.listTrans_Points[1].position) < 1.5f)
+            {
+                transform.position = GameController.Instance.parkingLotManager.listTrans_Points[1].position;
+                carInfo.directions_Car = Directions.Right;
+                return;
+            }
+        }
+        else if (node.kind == BoundaryNode.NodeKind.RightDown)
+        {
+            if (Vector2.Distance(transform.position,
+                    GameController.Instance.parkingLotManager.listTrans_Points[2].position) < 1.5f)
+            {
+                transform.position = GameController.Instance.parkingLotManager.listTrans_Points[2].position;
+                carInfo.directions_Car = Directions.Up;
+                return;
+            }
+            transform.position =
+                new Vector2(GameController.Instance.parkingLotManager.listTrans_Points[2].position.x,
+                    transform.position.y);
+
+            if (Vector2.Distance(transform.position,
+                    GameController.Instance.parkingLotManager.listTrans_Points[3].position) < 1.5f)
+            {
+                transform.position = GameController.Instance.parkingLotManager.listTrans_Points[3].position;
+                carInfo.directions_Car = Directions.Left;
+                return;
+            }
+        }
+        else if (node.kind == BoundaryNode.NodeKind.Wall)
+        {
+            transform.position = new Vector2(transform.position.x, GameController.Instance.parkingLotManager.listTrans_Points[0].position.y);
+        }
+        carInfo.directions_Car = outgoing;
+    }
+
     // Tìm ParkingSpace trống (theo thứ tự trái sang phải)
     private ParkingSpace FindNextAvailableParkingSpace()
     {
